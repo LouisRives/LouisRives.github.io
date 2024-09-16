@@ -1,0 +1,176 @@
+/* Style global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navigation */
+header {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section à propos */
+#about {
+    background-color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+#about h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+#about p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#about .btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#about .btn:hover {
+    background-color: #555;
+}
+
+/* Section compétences */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#skills {
+    background-color: #eaeaea;
+    padding: 50px 20px;
+}
+
+.skills {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills div {
+    width: 45%;
+}
+
+.skills h3 {
+    font-size: 1.5em;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills ul li {
+    margin-bottom: 10px;
+}
+
+/* Section projets */
+#projects {
+    padding: 50px 20px;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px);
+}
+
+.project h3 {
+    margin-top: 0;
+}
+
+.project p {
+    font-size: 1em;
+}
+
+.project .btn {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.project .btn:hover {
+    background-color: #555;
+}
+
+/* Section contact */
+#contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#contact p {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .skills {
+        flex-direction: column;
+    }
+
+    .skills div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .project-list {
+        flex-direction: column;
+    }
+
+    .project {
+        width: 100%;
+    }
+}
