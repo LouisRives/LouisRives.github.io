@@ -43,7 +43,8 @@ header nav ul li a:hover {
 
 .about-content {
     display: flex;
-    align-items: center;
+    align-items: center; 
+    gap: 20px; 
 }
 
 .photo {
@@ -53,10 +54,12 @@ header nav ul li a:hover {
 .profile-photo {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 50%; 
+    object-fit: cover; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
+/* Texte à propos */
 .about-text {
     max-width: 600px;
 }
