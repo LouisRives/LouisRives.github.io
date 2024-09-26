@@ -41,6 +41,27 @@ header nav ul li a:hover {
     text-align: center;
 }
 
+.about-content {
+    display: flex;
+    align-items: center;
+}
+
+.photo {
+    margin-right: 20px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+
 #about h1 {
     font-size: 3em;
     margin-bottom: 10px;
