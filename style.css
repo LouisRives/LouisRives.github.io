@@ -143,11 +143,16 @@ header nav ul li a:hover {
 }
 
 .project img {
-    width: 100%;
-    height: auto;
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
     border-radius: 5px;
-    margin-bottom: 15px; /* Ajoute un espace entre l'image et le texte */
+    margin-bottom: 15px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 .project h3 {
     margin-top: 0;
