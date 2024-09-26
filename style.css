@@ -88,7 +88,6 @@ header nav ul li a:hover {
     background-color: #555;
 }
 
-
 /* Section compétences */
 .container {
     width: 100%;
@@ -128,26 +127,21 @@ header nav ul li a:hover {
     padding: 50px 20px;
 }
 
-.project img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px; /* Ajoute un espace entre l'image et le texte */
-}
-
-.project-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-    gap: 20px; 
-}
-
 .project {
     width: calc(33.333% - 20px); 
     background-color: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Assure que les contenus ne débordent pas */
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Assure que l'image remplit le conteneur */
+    border-radius: 5px;
+    margin-bottom: 15px; /* Ajoute un espace entre l'image et le texte */
 }
 
 .project h3 {
