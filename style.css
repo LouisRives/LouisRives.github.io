@@ -128,6 +128,13 @@ header nav ul li a:hover {
     padding: 50px 20px;
 }
 
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px; /* Ajoute un espace entre l'image et le texte */
+}
+
 .project-list {
     display: flex;
     flex-wrap: wrap;
@@ -142,25 +149,6 @@ header nav ul li a:hover {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-.project {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: calc(33.333% - 20px);
-}
-
-.project img {
-    object-fit: cover; /* Garde le ratio d'aspect en recadrant l'image si nécessaire */
-    border-radius: 5px;
-    margin-bottom: 15px; /* Ajoute un espace entre l'image et le texte */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
 
 .project h3 {
     margin-top: 0;
