@@ -44,6 +44,7 @@ header nav ul li a:hover {
 .about-content {
     display: flex;
     align-items: center; 
+    justify-content: center;
     gap: 20px; 
 }
 
@@ -52,8 +53,8 @@ header nav ul li a:hover {
 }
 
 .profile-photo {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%; 
     object-fit: cover; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -62,8 +63,8 @@ header nav ul li a:hover {
 /* Texte à propos */
 .about-text {
     max-width: 600px;
+    text-align: left; 
 }
-
 
 #about h1 {
     font-size: 3em;
@@ -86,6 +87,7 @@ header nav ul li a:hover {
 #about .btn:hover {
     background-color: #555;
 }
+
 
 /* Section compétences */
 .container {
