@@ -158,25 +158,10 @@ header nav ul li a:hover {
     margin: 10px 0;
 }
 
-
 .project p {
     font-size: 1em; 
     color: #666; 
     line-height: 1.5; 
-}
-
-.project .btn {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.project .btn:hover {
-    background-color: #555;
 }
 
 /* Section contact */
