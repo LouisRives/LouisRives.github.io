@@ -142,6 +142,13 @@ header nav ul li a:hover {
     width: calc(33.333% - 20px);
 }
 
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px; /* Ajoute un espace entre l'image et le texte */
+}
+
 .project h3 {
     margin-top: 0;
 }
