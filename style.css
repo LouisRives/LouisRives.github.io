@@ -91,7 +91,7 @@ header nav ul li a:hover {
 
 /* Section compétences */
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: auto;
 }
