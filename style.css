@@ -50,13 +50,11 @@ header nav ul li a:hover {
 
 .photo {
     margin-right: 20px;
-    align-self: flex-start;
-    transform: translateY(10px);
 }
 
 .profile-photo {
-    width: 200px;
-    height: 200px;
+    width: 230px;
+    height: 230px;
     border-radius: 50%; 
     object-fit: cover; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
