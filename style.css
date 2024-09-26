@@ -124,24 +124,26 @@ header nav ul li a:hover {
 
 /* Liste des projets */
 .project-list {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
+    display: flex; /* Utilise le modèle Flexbox */
+    flex-wrap: wrap; /* Permet de passer à la ligne */
+    justify-content: space-between; /* Espace entre les éléments */
 }
 
+/* Style de chaque projet */
 .project {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd; 
-    border-radius: 8px; 
-    width: 30%; 
-    margin: 10px;
-    padding: 15px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.2s; 
+    background-color: #f9f9f9; /* Couleur de fond */
+    border: 1px solid #ddd; /* Bordure autour des projets */
+    border-radius: 8px; /* Coins arrondis */
+    width: 30%; /* Largeur ajustée pour permettre plusieurs projets sur la même ligne */
+    margin: 10px; /* Marges entre les projets, ajusté pour un espacement plus léger */
+    padding: 15px; /* Espacement intérieur */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre autour des projets */
+    transition: transform 0.2s; /* Animation de transformation */
 }
 
+/* Effet de survol sur chaque projet */
 .project:hover {
-    transform: translateY(-5px); 
+    transform: translateY(-5px); /* Légère élévation */
 }
 
 .project-image {
