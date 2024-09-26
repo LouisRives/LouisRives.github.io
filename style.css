@@ -88,6 +88,7 @@ header nav ul li a:hover {
     background-color: #555;
 }
 
+
 /* Section compétences */
 .container {
     width: 100%;
@@ -103,11 +104,10 @@ header nav ul li a:hover {
 .skills {
     display: flex;
     justify-content: space-between;
-    gap: 5%; /* Ajout d'un écart plus grand entre les compétences */
 }
 
 .skills div {
-    width: 48%; /* Légèrement élargi pour occuper plus d'espace */
+    width: 45%;
 }
 
 .skills h3 {
@@ -131,8 +131,14 @@ header nav ul li a:hover {
 .project-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px; /* Espacement entre les projets */
+    justify-content: space-between; 
+    gap: 20px; 
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .project {
@@ -140,7 +146,7 @@ header nav ul li a:hover {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: calc(33.333% - 20px); /* Un tiers de la largeur, avec un gap de 20px */
+    width: calc(33.333% - 20px);
 }
 
 .project h3 {
@@ -183,29 +189,14 @@ footer {
 }
 
 /* Responsiveness */
-@media (max-width: 1024px) {
-    .skills {
-        flex-direction: row;
-        gap: 3%;
-    }
-
-    .skills div {
-        width: 48%;
-    }
-
-    .project {
-        width: calc(50% - 20px); /* Deux projets par ligne sur les écrans moyens */
-    }
-}
-
 @media (max-width: 768px) {
     .skills {
         flex-direction: column;
-        gap: 20px; /* Espace plus grand entre les sections sur petits écrans */
     }
 
     .skills div {
         width: 100%;
+        margin-bottom: 20px;
     }
 
     .project-list {
@@ -213,6 +204,6 @@ footer {
     }
 
     .project {
-        width: 100%; /* Un projet par ligne sur les petits écrans */
+        width: 100%;
     }
 }
