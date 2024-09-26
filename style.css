@@ -135,10 +135,12 @@ header nav ul li a:hover {
     gap: 20px; 
 }
 
-.project-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+.project {
+    width: calc(33.333% - 20px); 
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .project {
