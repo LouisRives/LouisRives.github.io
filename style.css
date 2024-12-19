@@ -36,7 +36,7 @@ header nav ul li a:hover {
 
 .language-switch {
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 20px;
 }
 
@@ -46,7 +46,6 @@ header nav ul li a:hover {
     padding: 8px 15px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 0.9em;
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
