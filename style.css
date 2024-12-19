@@ -191,6 +191,16 @@ footer {
     text-align: center;
 }
 
+
+#project-details {
+    padding: 20px;
+}
+
+#project-details h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .project-description {
     text-align: justify;
     margin-bottom: 20px;
