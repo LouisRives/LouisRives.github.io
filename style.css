@@ -191,6 +191,19 @@ footer {
     text-align: center;
 }
 
+.project-description {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.project-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
 /* Responsiveness */
 @media (max-width: 768px) {
     .skills {
