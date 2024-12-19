@@ -204,6 +204,13 @@ footer {
     padding: 10px;
 }
 
+.project-images img {
+    margin-bottom: 10px;
+    width: 400px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
 /* Responsiveness */
 @media (max-width: 768px) {
     .skills {
