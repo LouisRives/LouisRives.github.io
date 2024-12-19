@@ -41,6 +41,12 @@ header nav ul li a:hover {
     text-align: center;
 }
 
+#aboutproject {
+    background-color: #fff;
+    padding: 20px 20px;
+    text-align: center;
+}
+
 .about-content {
     display: flex;
     align-items: center; 
@@ -61,8 +67,8 @@ header nav ul li a:hover {
 }
 
 .profile-photo-project {
-    width: 100px;
-    height: 100px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%; 
     object-fit: cover; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
