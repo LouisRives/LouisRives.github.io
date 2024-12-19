@@ -41,17 +41,18 @@ header nav ul li a:hover {
 }
 
 .language-switch .btn-lang {
-    background-color: #007bff; /* Bleu, mais tu peux choisir une autre couleur */
+    background-color: #333;
     color: white;
-    padding: 10px 15px;
+    padding: 8px 15px;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .language-switch .btn-lang:hover {
-    background-color: #0056b3; /* Couleur légèrement plus foncée au survol */
+    background-color: #555;
 }
 
 /* Section à propos */
