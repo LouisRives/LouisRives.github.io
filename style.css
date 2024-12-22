@@ -252,6 +252,10 @@ footer {
     margin-bottom: 20px;
 }
 
+#project-details .image-btn-center {
+    text-align: center; 
+}
+
 .project-images {
     display: flex;
     justify-content: center;
@@ -272,10 +276,6 @@ footer {
     height: 550px;
     margin-right: 10px;
     border-radius: 8px;
-}
-
-#project-details .btn-container {
-    text-align: center; 
 }
 
 #project-details .btn {
