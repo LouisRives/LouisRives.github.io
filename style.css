@@ -274,7 +274,7 @@ footer {
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
-    display: block;
+    display: inline-block;
     margin: 20px auto;
 }
 
