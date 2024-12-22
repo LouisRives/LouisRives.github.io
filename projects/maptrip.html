@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portfolio - Louis RIVES-LEHTINEN</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html#about">À propos</a></li>
+                <li><a href="../index.html#skills">Compétences</a></li>
+                <li><a href="../index.html#projects">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section À propos -->
+    <section id="aboutproject">
+        <div class="container">
+            <div class="about-content">
+                <div class="photo">
+                    <img src="../ressources/photo-louis.jpg" alt="Photo de Louis RIVES-LEHTINEN" class="profile-photo-project">
+                </div>
+                <div class="about-text">
+                    <h1>Louis RIVES-LEHTINEN</h1>
+                    Licence d'informatique | CERI Avignon <br>
+                    Erasmus | VUT Brno University of Technology 
+                    </p> 
+                    <a href="ressources/LouisRivesCV.pdf" class="btn">Télécharger mon CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-details">
+        <h2>Une nuit au CERI</h2>
+        <p class="project-description">
+            <p>Réalisé dans le cadre d'un évènement "24H pour coder" organisé par l'université d'Avignon, "Une nuit au CERI" est un jeu d'horreur à la première personne réalisé sur Unity par 3 collaborateurs et moi-même. Le principal défi de cet évènement a été de se répartir les tâches dans un temps donné. </p>
+            <p>Le principe du jeu est simple : le joueur se retrouve emprisoné dans le CERI (Centre d'Enseignement et de Recherche en Informatique), et il doit s'en sortir en récupérant 3 clés cachés, le tout en évitant de se faire attraper par le monstre qui rôde.</p>
+            <p>Cette expérience a marqué ma première utilisation de Unity, que j’ai découvert et appris au fil du projet. Mes principales tâches consistaient à gérer l’aspect graphique du jeu. J’ai commencé par remodéliser le CERI, en recréant les structures et en veillant à représenter fidèlement l’environnement.
+            Je me suis également chargé de concevoir et de placer les objets dans l’environnement, en réfléchissant à leur disposition pour équilibrer immersion et jouabilité. Une part importante de mon travail a été d’ajuster la luminosité et les effets d’éclairage, notamment en intégrant une lampe torche fonctionnelle pour renforcer l’atmosphère du jeu.
+            Enfin, bien que j’aie conçu plusieurs éléments moi-même, certains assets ont été récupérés sur le Unity Store pour gagner du temps et garantir une certaine cohérence graphique. Cette première expérience avec Unity m’a permis de développer mes compétences et de contribuer au projet de manière créative.</p>
+            <p>Principales caractéristiques :</p>
+            <ul>
+                <li>La carte du jeu est une modélisation 3D du CERI</li>
+                <li>L'IA peut repérer le joueur, et entamé une poursuite qui se finit au si le joueur arrive à la semer</li>
+                <li>Un système de pathfinding est utilisé avec l'IA afin qu'elle puisse poursuivre efficacement le joueur</li>
+                <li>Si l'IA n'a pas reperé le joueur, elle patrouille librement sur la carte</li>
+                <li>L'apparition des clés se fait aléatoirement</li>
+            </ul>
+        </p>
+          <div class="project-images">
+              <img src="../ressources/map-trip/map.jpg" alt="Image 1">
+              <img src="../ressources/map-trip/map2.jpg" alt="Image 2">
+              <img src="../ressources/map-trip/map3.jpg" alt="Image 3">
+              <img src="../ressources/map-trip/map4.jpg" alt="Image 4">
+              <img src="../ressources/map-trip/list-1.jpg" alt="Image 5">
+              <img src="../ressources/map-trip/list-2.jpg" alt="Image 6">
+          </div>
+       <a href="ressources/map-trip/technical-report-maptrip.pdf" class="btn">Voir la documentation</a>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p> <a href="mailto:louisrives2003@gmail.com" class="social-link"> <i class="fas fa-envelope"></i> louisrives2003@gmail.com </a> </p>
+        <p> <a href="tel:+33695298593" class="social-link"><i class="fas fa-phone"></i> +33 6 95 29 85 93 </a> </p>
+        <p> <a href="https://www.linkedin.com/in/louis-rives-lehtinen-546127274/" target="_blank" class="social-link"> <i class="fab fa-linkedin"></i> LinkedIn </a> </p>
+        <p> <a href="https://github.com/LouisRives" target="_blank" class="social-link"> <i class="fab fa-github"></i> GitHub </a> </p>
+        <p> <a href="https://steamcommunity.com/id/AceLouis/" target="_blank" class="social-link"> <i class="fab fa-steam"></i> Steam </a> </p>
+    </section>
+
+    <footer>
+        <p>© 2024 Louis RIVES-LEHTINEN - Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
