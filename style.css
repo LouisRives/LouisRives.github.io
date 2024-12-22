@@ -262,7 +262,14 @@ footer {
 
 .project-images img {
     margin-bottom: 10px;
-    width: 350px;
+    width: 400px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.project-images-height img {
+    margin-bottom: 10px;
+    height: 550px;
     margin-right: 10px;
     border-radius: 8px;
 }
