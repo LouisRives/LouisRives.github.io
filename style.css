@@ -170,9 +170,9 @@ header nav ul li a:hover {
 
 /* Liste des projets */
 .project-list {
-    display: flex; /* Utilise le modèle Flexbox */
-    flex-wrap: wrap; /* Permet de passer à la ligne */
-    justify-content: space-between; /* Espace entre les éléments */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
 }
 
 /* Style de chaque projet */
