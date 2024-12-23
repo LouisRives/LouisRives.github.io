@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portfolio - Louis RIVES-LEHTINEN</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch">
+            <a href="index.html" class="btn-lang">FR</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="aboutproject">
+        <div class="container">
+            <div class="about-content">
+                <div class="photo">
+                    <img src="../ressources/photo-louis.jpg" alt="Photo of Louis RIVES-LEHTINEN" class="profile-photo-project">
+                </div>
+                <div class="about-text">
+                    <h1>Louis RIVES-LEHTINEN</h1>
+                    Bachelor's in Computer Science | CERI Avignon <br>
+                    Erasmus | VUT Brno University of Technology
+                    </p> 
+                    <a href="ressources/LouisRivesCV.pdf" target="_blank" class="btn">Download my CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-details">
+        <h2>A Night at CERI</h2>
+        <p class="project-description">
+            <p>Developed as part of the "24H to Code" event organized by the University of Avignon, "A Night at CERI" is a first-person horror game created with Unity by a team of three collaborators and myself. The main challenge of this event was to divide tasks within a limited timeframe.</p>
+            <p>The game’s concept is simple: the player finds themselves trapped in the CERI (Center for Computer Science Education and Research) and must escape by collecting three hidden keys while avoiding the roaming monster.</p>
+            <p>This experience marked my first time using Unity, which I discovered and learned throughout the project. My primary responsibilities were managing the game’s graphical aspect. I started by remodeling the CERI, recreating its structures, and ensuring a faithful representation of the environment.  
+            I also designed and placed objects within the environment, thoughtfully arranging them to balance immersion and playability. A significant part of my work involved adjusting lighting and visual effects, including implementing a functional flashlight to enhance the game’s atmosphere.  
+            Lastly, although I created several elements myself, some assets were sourced from the Unity Store to save time and ensure graphical consistency. This first experience with Unity allowed me to develop my skills and contribute to the project creatively.</p>
+            <p>Main features:</p>
+            <ul>
+                <li>The game map is a 3D model of the CERI</li>
+                <li>The AI can spot the player and initiate a chase, which ends if the player successfully evades it</li>
+                <li>A pathfinding system is used by the AI to effectively pursue the player</li>
+                <li>If the AI has not detected the player, it freely patrols the map</li>
+                <li>The keys’ locations are randomized</li>
+            </ul>
+        </p>
+        <div class="image-btn-center">
+            <div class="project-images">
+                <img src="../ressources/nuit-au-ceri/classevide.png" alt="Image 1">
+                <img src="../ressources/nuit-au-ceri/monstreloins.png" alt="Image 2">
+                <img src="../ressources/nuit-au-ceri/clef.png" alt="Image 3">
+                <img src="../ressources/nuit-au-ceri/exit.png" alt="Image 4">
+                <img src="../ressources/nuit-au-ceri/monstreface.png" alt="Image 5">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p> <a href="mailto:louisrives2003@gmail.com" class="social-link"> <i class="fas fa-envelope"></i> louisrives2003@gmail.com </a> </p>
+        <p> <a href="tel:+33695298593" class="social-link"><i class="fas fa-phone"></i> +33 6 95 29 85 93 </a> </p>
+        <p> <a href="https://www.linkedin.com/in/louis-rives-lehtinen-546127274/" target="_blank" class="social-link"> <i class="fab fa-linkedin"></i> LinkedIn </a> </p>
+        <p> <a href="https://github.com/LouisRives" target="_blank" class="social-link"> <i class="fab fa-github"></i> GitHub </a> </p>
+        <p> <a href="https://steamcommunity.com/id/AceLouis/" target="_blank" class="social-link"> <i class="fab fa-steam"></i> Steam </a> </p>
+    </section>
+
+    <footer>
+        <p>© 2024 Louis RIVES-LEHTINEN - All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
