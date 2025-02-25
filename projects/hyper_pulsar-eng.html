@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portfolio - Louis RIVES-LEHTINEN</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index-en.html#about">About</a></li>
+                <li><a href="../index-en.html#skills">Skills</a></li>
+                <li><a href="../index-en.html#projects">Projects</a></li>
+                <li><a href="../index-en.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch">
+            <a href="../index.html" class="btn-lang">FR</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="aboutproject">
+        <div class="container">
+            <div class="about-content">
+                <div class="photo">
+                    <img src="../ressources/photo-louis.jpg" alt="Photo of Louis RIVES-LEHTINEN" class="profile-photo-project">
+                </div>
+                <div class="about-text">
+                    <h1>Louis RIVES-LEHTINEN</h1>
+                    <p>Bachelor's in Computer Science | CERI Avignon <br>
+                    Erasmus | VUT Brno University of Technology
+                    </p> 
+                    <a href="../ressources/LouisRivesCV.pdf" target="_blank" class="btn">Download my CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-details">
+        <h2>Hyper Pulsar</h2>
+        <p class="project-description">
+			<p>Immerse yourself in a fast-paced, die and retry 2D action game where precise movement, well-timed parries, and strategic combat define every encounter. As a skilled fighter, you’ll navigate dynamic environments, counter enemy attacks, and master the art of dodging and reflecting projectiles. 
+			With intense AI-driven enemies, fluid animations, and a deep combat system, every battle is a test of skill and reflexes.</p>
+
+			<p>During my gap year, I am dedicating myself to creating an indie game that I am passionate about. Inspired by masterpieces like <i>Hotline Miami</i> and <i>Katana Zero</i>, this project takes place in a brutal, stylized neo-noir universe where the action is both intense and thoughtful.</p>
+			<p>The player takes on the role of an intergalactic bounty hunter, tracking targets across different planets. Each one is a unique level, with its own theme, atmosphere, and gameplay mechanics. The goal? Find, fight, and eliminate space criminals.
+				Right now, I’m working on the Casino planet. Behind its flashy neon lights hides a world of betrayals, high-stakes gambling, and intense shootouts.
+				I strive to create immersive environments where strategy and reflexes are your best allies.</p>
+        </p>
+		<p>Here are some images of the ongoing development as well as a mood board: </p>
+        <div class="image-btn-center">
+			<div class="project-images">
+			<img src="../ressources/hyper-pulsar/moodboard_casino.png" alt="Image 1" class="clickable-image">
+			<img src="../ressources/hyper-pulsar/gamemaker1.png" alt="Image 2" class="clickable-image">
+			<img src="../ressources/hyper-pulsar/gamemaker2.png" alt="Image 3" class="clickable-image">
+			<img src="../ressources/hyper-pulsar/gamemaker3.png" alt="Image 4" class="clickable-image">
+			</div>
+		</div>
+	
+		<!-- Modal Structure -->
+		<div id="imageModal" class="modal">
+			<span class="close">&times;</span>
+			<img class="modal-content" id="fullImage">
+		</div>
+
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p> <a href="mailto:louisrives2003@gmail.com" class="social-link"> <i class="fas fa-envelope"></i> louisrives2003@gmail.com </a> </p>
+        <p> <a href="tel:+33695298593" class="social-link"><i class="fas fa-phone"></i> +33 6 95 29 85 93 </a> </p>
+        <p> <a href="https://www.linkedin.com/in/louis-rives-lehtinen-546127274/" target="_blank" class="social-link"> <i class="fab fa-linkedin"></i> LinkedIn </a> </p>
+        <p> <a href="https://github.com/LouisRives" target="_blank" class="social-link"> <i class="fab fa-github"></i> GitHub </a> </p>
+        <p> <a href="https://steamcommunity.com/id/AceLouis/" target="_blank" class="social-link"> <i class="fab fa-steam"></i> Steam </a> </p>
+    </section>
+
+    <footer>
+        <p>© 2024 Louis RIVES-LEHTINEN - All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+	    const modal = document.getElementById("imageModal");
+	    const modalImg = document.getElementById("fullImage");
+	    const closeBtn = document.querySelector(".close");
+	    
+	    document.querySelectorAll(".clickable-image").forEach(img => {
+	        img.addEventListener("click", function () {
+	            modal.style.display = "flex";
+	            modalImg.src = this.src;
+	        });
+	    });
+	
+	    closeBtn.addEventListener("click", function () {
+	        modal.style.display = "none";
+	    });
+	
+	    modal.addEventListener("click", function (e) {
+	        if (e.target === modal) {
+	            modal.style.display = "none";
+	        }
+	    });
+	});
+</script>
