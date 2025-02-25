@@ -55,20 +55,19 @@
 	<p>Voici quelques images du développement en cours ainsi qu'un Mood board : </p>
         <div class="image-btn-center">
 	    <div class="project-images">
-	        <a href="../ressources/hyper-pulsar/moodboard_casino.png" class="fullscreen-image">
-	            <img src="../ressources/hyper-pulsar/moodboard_casino.png" alt="Image 1">
-	        </a>
-	        <a href="../ressources/hyper-pulsar/gamemaker1.png" class="fullscreen-image">
-	            <img src="../ressources/hyper-pulsar/gamemaker1.png" alt="Image 2">
-	        </a>
-	        <a href="../ressources/hyper-pulsar/gamemaker2.png" class="fullscreen-image">
-	            <img src="../ressources/hyper-pulsar/gamemaker2.png" alt="Image 3">
-	        </a>
-	        <a href="../ressources/hyper-pulsar/gamemaker3.png" class="fullscreen-image">
-	            <img src="../ressources/hyper-pulsar/gamemaker3.png" alt="Image 4">
-	        </a>
+		<img src="../ressources/hyper-pulsar/moodboard_casino.png" alt="Image 1" class="clickable-image">
+		<img src="../ressources/hyper-pulsar/gamemaker1.png" alt="Image 2" class="clickable-image">
+		<img src="../ressources/hyper-pulsar/gamemaker2.png" alt="Image 3" class="clickable-image">
+		<img src="../ressources/hyper-pulsar/gamemaker3.png" alt="Image 4" class="clickable-image">
 	    </div>
 	</div>
+	
+	<!-- Modal Structure -->
+	<div id="imageModal" class="modal">
+	    <span class="close">&times;</span>
+	    <img class="modal-content" id="fullImage">
+	</div>
+
     </section>
 
     <!-- Section Contact -->
@@ -88,35 +87,28 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const images = document.querySelectorAll(".fullscreen-image");
-    
-    // Create overlay element
-    const overlay = document.createElement("div");
-    overlay.classList.add("fullscreen-overlay");
-    overlay.innerHTML = '<span class="close-btn">&times;</span><img src="" alt="Fullscreen Image">';
-    document.body.appendChild(overlay);
-    
-    const overlayImg = overlay.querySelector("img");
-    const closeButton = overlay.querySelector(".close-btn");
-
-    images.forEach(image => {
-        image.addEventListener("click", function (event) {
-            event.preventDefault();
-            overlayImg.src = this.href;
-            overlay.classList.add("active");
-        });
-    });
-
-    closeButton.addEventListener("click", () => {
-        overlay.classList.remove("active");
-    });
-
-    overlay.addEventListener("click", (event) => {
-        if (event.target === overlay) {
-            overlay.classList.remove("active");
-        }
-    });
-});
+	document.addEventListener("DOMContentLoaded", function () {
+	    const modal = document.getElementById("imageModal");
+	    const modalImg = document.getElementById("fullImage");
+	    const closeBtn = document.querySelector(".close");
+	    
+	    document.querySelectorAll(".clickable-image").forEach(img => {
+	        img.addEventListener("click", function () {
+	            modal.style.display = "flex";
+	            modalImg.src = this.src;
+	        });
+	    });
+	
+	    closeBtn.addEventListener("click", function () {
+	        modal.style.display = "none";
+	    });
+	
+	    modal.addEventListener("click", function (e) {
+	        if (e.target === modal) {
+	            modal.style.display = "none";
+	        }
+	    });
+	});
 </script>
