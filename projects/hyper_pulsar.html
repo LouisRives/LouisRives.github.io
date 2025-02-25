@@ -88,3 +88,35 @@
     <script src="script.js"></script>
 </body>
 </html>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".fullscreen-image");
+    
+    // Create overlay element
+    const overlay = document.createElement("div");
+    overlay.classList.add("fullscreen-overlay");
+    overlay.innerHTML = '<span class="close-btn">&times;</span><img src="" alt="Fullscreen Image">';
+    document.body.appendChild(overlay);
+    
+    const overlayImg = overlay.querySelector("img");
+    const closeButton = overlay.querySelector(".close-btn");
+
+    images.forEach(image => {
+        image.addEventListener("click", function (event) {
+            event.preventDefault();
+            overlayImg.src = this.href;
+            overlay.classList.add("active");
+        });
+    });
+
+    closeButton.addEventListener("click", () => {
+        overlay.classList.remove("active");
+    });
+
+    overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) {
+            overlay.classList.remove("active");
+        }
+    });
+});
+</script>
