@@ -1,89 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Portfolio - Louis RIVES-LEHTINEN</title>
+    <title>Une nuit au CERI — Louis RIVES-LEHTINEN</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
     <!-- Navigation -->
     <header>
         <nav>
             <ul>
-                <li><a href="../index-en.html#about">About</a></li>
-                <li><a href="../index-en.html#skills">Skills</a></li>
-                <li><a href="../index-en.html#projects">Projects</a></li>
-                <li><a href="../index-en.html#contact">Contact</a></li>
+                <li><a href="../index.html#about">À propos</a></li>
+                <li><a href="../index.html#skills">Parcours</a></li>
+                <li><a href="../index.html#projects">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="language-switch">
-            <a href="../index.html" class="btn-lang">FR</a>
+            <a href="nuit-au-ceri-eng.html" class="btn-lang">ENG</a>
         </div>
     </header>
 
-    <!-- About Section -->
+    <!-- ═══════════════════════════════════
+         MINI ABOUT HEADER
+    ═══════════════════════════════════ -->
     <section id="aboutproject">
         <div class="container">
             <div class="about-content">
                 <div class="photo">
-                    <img src="../ressources/photo-louis.jpg" alt="Photo of Louis RIVES-LEHTINEN" class="profile-photo-project">
+                    <img src="../ressources/photo-louis.jpg"
+                         alt="Photo de Louis RIVES-LEHTINEN"
+                         class="profile-photo-project">
                 </div>
                 <div class="about-text">
-                    <h1>Louis RIVES-LEHTINEN</h1>
-                    Bachelor's in Computer Science | CERI Avignon <br>
-                    Erasmus | VUT Brno University of Technology
-                    </p> 
-                    <a href="../ressources/LouisRivesCV.pdf" target="_blank" class="btn">Download my CV</a>
+                    <p class="eyebrow">◆ &nbsp;GAME JAM &nbsp;·&nbsp; 24H &nbsp;·&nbsp; UNIVERSITÉ D'AVIGNON&nbsp; ◆</p>
+                    <h1>Louis Rives-Lehtinen</h1>
+                    <p class="about-subtitle">Licence Informatique — CERI Avignon</p>
+                    <p class="about-subtitle">Erasmus — VUT Brno University of Technology</p>
+                    <a href="../ressources/LouisRivesCV.pdf" target="_blank" class="btn">⬇ &nbsp;Télécharger mon CV</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════
+         DÉTAILS DU PROJET
+    ═══════════════════════════════════ -->
     <section id="project-details">
-        <h2>A Night at CERI</h2>
-        <p class="project-description">
-            <p>Developed as part of the "24 hours to Code" event organized by the University of Avignon, "A Night at CERI" is a first-person horror game created with Unity by a team of three collaborators and myself. The main challenge of this event was to divide tasks within a limited timeframe.</p>
-            <p>The game’s concept is simple: the player finds themselves trapped in the CERI (Center for Computer Science Education and Research) and must escape by collecting three hidden keys while avoiding the roaming monster.</p>
-            <p>This experience marked my first time using Unity, which I discovered and learned throughout the project. My primary responsibilities were managing the game’s graphical aspect. I started by remodeling the CERI, recreating its structures, and ensuring a faithful representation of the environment.  
-            I also designed and placed objects within the environment, thoughtfully arranging them to balance immersion and playability. A significant part of my work involved adjusting lighting and visual effects, including implementing a functional flashlight to enhance the game’s atmosphere.  
-            Lastly, although I created several elements myself, some assets were sourced from the Unity Store to save time and ensure graphical consistency. This first experience with Unity allowed me to develop my skills and contribute to the project creatively.</p>
-            <p>Main features:</p>
+
+        <h2>Une nuit au CERI</h2>
+        <p class="project-subtitle">◆ &nbsp;HORREUR &nbsp;·&nbsp; PREMIÈRE PERSONNE &nbsp;·&nbsp; UNITY&nbsp; ◆</p>
+
+        <div class="divider"><span>✦</span></div>
+
+        <div class="project-description">
+
+            <p>Réalisé dans le cadre d'un évènement "24H pour coder" organisé par l'université d'Avignon, <em>Une nuit au CERI</em> est un jeu d'horreur à la première personne développé sur Unity par trois collaborateurs et moi-même. Le principal défi de cet évènement a été de se répartir les tâches efficacement dans un temps très limité.</p>
+
+            <p>Le principe du jeu est simple : le joueur se retrouve emprisonné dans le CERI (Centre d'Enseignement et de Recherche en Informatique) et doit s'en échapper en récupérant trois clés cachées, tout en évitant le monstre qui rôde dans les couloirs.</p>
+
+            <p>Cette expérience a marqué ma première utilisation de Unity, que j'ai découvert et appris au fil du projet. Mes principales tâches consistaient à gérer l'aspect graphique du jeu. J'ai commencé par remodéliser le CERI, en recréant ses structures et en veillant à représenter fidèlement l'environnement réel. Je me suis également chargé de concevoir et de placer les objets dans la scène, en réfléchissant à leur disposition pour équilibrer immersion et jouabilité. Une part importante de mon travail a été d'ajuster la luminosité et les effets d'éclairage, notamment en intégrant une lampe torche fonctionnelle pour renforcer l'atmosphère du jeu. Bien que j'aie conçu plusieurs éléments moi-même, certains assets ont été récupérés sur l'Unity Asset Store pour gagner du temps et garantir une cohérence graphique. Cette première expérience avec Unity m'a permis de développer mes compétences et de contribuer au projet de manière créative.</p>
+
+            <p><strong>Principales caractéristiques :</strong></p>
             <ul>
-                <li>The game map is a 3D model of the CERI</li>
-                <li>The AI can spot the player and initiate a chase, which ends if the player successfully evades it</li>
-                <li>A pathfinding system is used by the AI to effectively pursue the player</li>
-                <li>If the AI has not detected the player, it freely patrols the map</li>
-                <li>The keys’ locations are randomized</li>
+                <li>La carte du jeu est une modélisation 3D complète du bâtiment CERI</li>
+                <li>L'IA peut repérer le joueur et entamer une poursuite, qui se termine si le joueur réussit à la semer</li>
+                <li>Un système de pathfinding permet à l'IA de poursuivre efficacement le joueur</li>
+                <li>Lorsque l'IA n'a pas repéré le joueur, elle patrouille librement sur la carte</li>
+                <li>L'apparition des clés est aléatoire à chaque partie</li>
             </ul>
-        </p>
+
+        </div>
+
+        <!-- ── Captures d'écran ── -->
         <div class="image-btn-center">
             <div class="project-images">
-                <img src="../ressources/nuit-au-ceri/classevide.png" alt="Image 1">
-                <img src="../ressources/nuit-au-ceri/monstreloins.png" alt="Image 2">
-                <img src="../ressources/nuit-au-ceri/clef.png" alt="Image 3">
-                <img src="../ressources/nuit-au-ceri/exit.png" alt="Image 4">
-                <img src="../ressources/nuit-au-ceri/monstreface.png" alt="Image 5">
+                <img src="../ressources/nuit-au-ceri/classevide.png" alt="Salle de classe vide">
+                <img src="../ressources/nuit-au-ceri/monstreloins.png" alt="Monstre au loin">
+                <img src="../ressources/nuit-au-ceri/clef.png" alt="Ramassage de clé">
+                <img src="../ressources/nuit-au-ceri/exit.png" alt="Porte de sortie">
+                <img src="../ressources/nuit-au-ceri/monstreface.png" alt="Monstre de près">
             </div>
         </div>
+
+        <!-- ── Tags ── -->
+        <div class="project-tags">
+            <span class="project-tag">Unity</span>
+            <span class="project-tag">C#</span>
+            <span class="project-tag">Game Jam</span>
+            <span class="project-tag">Horreur</span>
+            <span class="project-tag">Première personne</span>
+            <span class="project-tag">Modélisation 3D</span>
+            <span class="project-tag">Pathfinding IA</span>
+            <span class="project-tag">Université d'Avignon</span>
+        </div>
+
     </section>
 
-    <!-- Contact Section -->
+    <!-- ═══════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════ -->
     <section id="contact" class="container">
-        <h2>Contact</h2>
-        <p> <a href="mailto:louisrives2003@gmail.com" class="social-link"> <i class="fas fa-envelope"></i> louisrives2003@gmail.com </a> </p>
-        <p> <a href="tel:+33695298593" class="social-link"><i class="fas fa-phone"></i> +33 6 95 29 85 93 </a> </p>
-        <p> <a href="https://www.linkedin.com/in/louis-rives-lehtinen-546127274/" target="_blank" class="social-link"> <i class="fab fa-linkedin"></i> LinkedIn </a> </p>
-        <p> <a href="https://github.com/LouisRives" target="_blank" class="social-link"> <i class="fab fa-github"></i> GitHub </a> </p>
-        <p> <a href="https://steamcommunity.com/id/AceLouis/" target="_blank" class="social-link"> <i class="fab fa-steam"></i> Steam </a> </p>
+        <h2 class="section-heading">Contact</h2>
+        <div class="divider"><span>✦</span></div>
+        <p><a href="mailto:louisrives2003@gmail.com" class="social-link"><i class="fas fa-envelope"></i> louisrives2003@gmail.com</a></p>
+        <p><a href="tel:+33695298593" class="social-link"><i class="fas fa-phone"></i> +33 6 95 29 85 93</a></p>
+        <p><a href="https://www.linkedin.com/in/louis-rives-lehtinen-546127274/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+        <p><a href="https://github.com/LouisRives" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a></p>
+        <p><a href="https://steamcommunity.com/id/AceLouis/" target="_blank" class="social-link"><i class="fab fa-steam"></i> Steam</a></p>
     </section>
 
     <footer>
-        <p>© 2024 Louis RIVES-LEHTINEN - All rights reserved.</p>
+        <p>◆ &nbsp;© 2026 Louis RIVES-LEHTINEN &nbsp;·&nbsp; TOUS DROITS RÉSERVÉS &nbsp;◆</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
