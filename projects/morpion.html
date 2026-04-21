@@ -4,89 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Portfolio - Louis RIVES-LEHTINEN</title>
+    <title>Morpion — Louis RIVES-LEHTINEN</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
     <!-- Navigation -->
     <header>
         <nav>
             <ul>
                 <li><a href="../index.html#about">À propos</a></li>
-                <li><a href="../index.html#skills">Compétences</a></li>
+                <li><a href="../index.html#skills">Parcours</a></li>
                 <li><a href="../index.html#projects">Projets</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
             </ul>
         </nav>
-		<div class="language-switch">
-            <a href="../index-en.html" class="btn-lang">ENG</a>
+        <div class="language-switch">
+            <a href="morpion-eng.html" class="btn-lang">ENG</a>
         </div>
     </header>
 
-    <!-- Section À propos -->
+    <!-- ═══════════════════════════════════
+         MINI ABOUT HEADER
+    ═══════════════════════════════════ -->
     <section id="aboutproject">
         <div class="container">
             <div class="about-content">
                 <div class="photo">
-                    <img src="../ressources/photo-louis.jpg" alt="Photo de Louis RIVES-LEHTINEN" class="profile-photo-project">
+                    <img src="../ressources/photo-louis.jpg"
+                         alt="Photo de Louis RIVES-LEHTINEN"
+                         class="profile-photo-project">
                 </div>
                 <div class="about-text">
-                    <h1>Louis RIVES-LEHTINEN</h1>
-                    Licence d'informatique | CERI Avignon <br>
-                    Erasmus | VUT Brno University of Technology 
-                    </p> 
-                    <a href="../ressources/LouisRivesCV.pdf" target="_blank" class="btn">Télécharger mon CV</a>
+                    <p class="eyebrow">◆ &nbsp;PROJET UNIVERSITAIRE &nbsp;·&nbsp; BINÔME&nbsp; ◆</p>
+                    <h1>Louis Rives-Lehtinen</h1>
+                    <p class="about-subtitle">Licence Informatique — CERI Avignon</p>
+                    <p class="about-subtitle">Erasmus — VUT Brno University of Technology</p>
+                    <a href="../ressources/LouisRivesCV.pdf" target="_blank" class="btn">⬇ &nbsp;Télécharger mon CV</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════
+         DÉTAILS DU PROJET
+    ═══════════════════════════════════ -->
     <section id="project-details">
+
         <h2>Morpion</h2>
-        <p class="project-description">
-            <p>Ce projet a été réalisé lors de ma troisième d'année de license avec un camarade. L'application est donc un jeu de Morpion réalisé en JavaFX, il est possible de jouer en multijoueur local tout comme contre une IA.
-            La difficulté de l'IA est ajustable sur la page de création de modèle d'IA. Il existe également une page paramètres afin de mettre le jeu en plein écran ainsi que de modifier le volume sonore. </p>
-            <p>Pour ma part, je me suis occupé principalement de la logique de jeu et de l’apprentissage de l’IA, tandis que mon coéquipier s’est occupé de l’interface graphique ainsi que des paramètres de l’application. </p>
-            <p>Principales caractéristiques :</p>
+        <p class="project-subtitle">◆ &nbsp;JAVAFX &nbsp;·&nbsp; MVC &nbsp;·&nbsp; IA &nbsp;·&nbsp; CERI AVIGNON&nbsp; ◆</p>
+
+        <div class="divider"><span>✦</span></div>
+
+        <div class="project-description">
+
+            <p>Ce projet a été réalisé lors de ma troisième année de licence avec un camarade, Samy Seghir. L'application est un jeu de Morpion développé en JavaFX, permettant de jouer en multijoueur local ou contre une IA. La difficulté de l'IA est ajustable sur la page de création de modèle. Une page paramètres permet également de passer le jeu en plein écran et de modifier le volume sonore.</p>
+
+            <p>Pour ma part, je me suis occupé principalement de la logique de jeu et de l'apprentissage de l'IA, tandis que mon camarade a géré l'interface graphique et les paramètres de l'application.</p>
+
+            <p><strong>Principales caractéristiques :</strong></p>
             <ul>
-                <li>Réalisation en JavaFX</li>
-                <li>Architecture MVC</li>
-                <li>Multijoueur local</li>
+                <li>Développé en JavaFX avec architecture MVC</li>
+                <li>Mode multijoueur local</li>
                 <li>Possibilité de jouer contre une IA</li>
-                <li>Ajustement manuel la difficulté du modèle de l'IA</li>
-                <li>Animations de victoires et de défaites</li>
-                <li>Sound Design (musique de fond & bruitages)</li>
+                <li>Difficulté du modèle IA ajustable manuellement</li>
+                <li>Animations de victoire et de défaite</li>
+                <li>Sound design — musique de fond &amp; bruitages</li>
             </ul>
-        </p>
-        <div class="image-btn-center">
-              <div class="project-images">
-                  <img src="../ressources/tictactoe/ttt1.png" alt="Image 1">
-                  <img src="../ressources/tictactoe/ttt2.png" alt="Image 2">
-                  <img src="../ressources/tictactoe/ttt3.png" alt="Image 3">
-                  <img src="../ressources/tictactoe/ttt4.png" alt="Image 4">
-                  <img src="../ressources/tictactoe/ttt5.png" alt="Image 5">
-                  <img src="../ressources/tictactoe/ttt6.png" alt="Image 6">
-              </div>
-            <a href="../ressources/tictactoe/Rapport-tictactoe.pdf" class="btn">Voir la documentation</a>
-            <a href="https://github.com/LouisRives/TicTacToe" class="btn">Voir sur GitHub</a>
+
         </div>
+
+        <!-- ── Captures d'écran ── -->
+        <div class="image-btn-center">
+            <div class="project-images">
+                <img src="../ressources/tictactoe/ttt1.png" alt="Menu principal">
+                <img src="../ressources/tictactoe/ttt2.png" alt="Plateau de jeu">
+                <img src="../ressources/tictactoe/ttt3.png" alt="Configuration IA">
+                <img src="../ressources/tictactoe/ttt4.png" alt="Écran de victoire">
+                <img src="../ressources/tictactoe/ttt5.png" alt="Paramètres">
+                <img src="../ressources/tictactoe/ttt6.png" alt="Gameplay">
+            </div>
+            <a href="../ressources/tictactoe/Rapport-tictactoe.pdf" class="btn">
+                <i class="fas fa-file-pdf"></i>&nbsp; Voir la documentation
+            </a>
+            <a href="https://github.com/LouisRives/TicTacToe" target="_blank" class="btn">
+                <i class="fab fa-github"></i>&nbsp; Voir sur GitHub
+            </a>
+        </div>
+
+        <!-- ── Tags ── -->
+        <div class="project-tags">
+            <span class="project-tag">Java</span>
+            <span class="project-tag">JavaFX</span>
+            <span class="project-tag">MVC</span>
+            <span class="project-tag">IA</span>
+            <span class="project-tag">Multijoueur Local</span>
+            <span class="project-tag">Sound Design</span>
+            <span class="project-tag">Binôme</span>
+            <span class="project-tag">CERI Avignon</span>
+        </div>
+
     </section>
 
-    <!-- Section Contact -->
+    <!-- ═══════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════ -->
     <section id="contact" class="container">
-        <h2>Contact</h2>
-        <p> <a href="mailto:louisrives2003@gmail.com" class="social-link"> <i class="fas fa-envelope"></i> louisrives2003@gmail.com </a> </p>
-        <p> <a href="tel:+33695298593" class="social-link"><i class="fas fa-phone"></i> +33 6 95 29 85 93 </a> </p>
-        <p> <a href="https://www.linkedin.com/in/louis-rives-lehtinen-546127274/" target="_blank" class="social-link"> <i class="fab fa-linkedin"></i> LinkedIn </a> </p>
-        <p> <a href="https://github.com/LouisRives" target="_blank" class="social-link"> <i class="fab fa-github"></i> GitHub </a> </p>
-        <p> <a href="https://steamcommunity.com/id/AceLouis/" target="_blank" class="social-link"> <i class="fab fa-steam"></i> Steam </a> </p>
+        <h2 class="section-heading">Contact</h2>
+        <div class="divider"><span>✦</span></div>
+        <p><a href="mailto:louisrives2003@gmail.com" class="social-link"><i class="fas fa-envelope"></i> louisrives2003@gmail.com</a></p>
+        <p><a href="tel:+33695298593" class="social-link"><i class="fas fa-phone"></i> +33 6 95 29 85 93</a></p>
+        <p><a href="https://www.linkedin.com/in/louis-rives-lehtinen-546127274/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+        <p><a href="https://github.com/LouisRives" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a></p>
+        <p><a href="https://steamcommunity.com/id/AceLouis/" target="_blank" class="social-link"><i class="fab fa-steam"></i> Steam</a></p>
     </section>
 
     <footer>
-        <p>© 2024 Louis RIVES-LEHTINEN - Tous droits réservés.</p>
+        <p>◆ &nbsp;© 2026 Louis RIVES-LEHTINEN &nbsp;·&nbsp; TOUS DROITS RÉSERVÉS &nbsp;◆</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
