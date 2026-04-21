@@ -1,1 +1,130 @@
-Work in progess
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wordle — Louis RIVES-LEHTINEN</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html#about">À propos</a></li>
+                <li><a href="../index.html#skills">Parcours</a></li>
+                <li><a href="../index.html#projects">Projets</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch">
+            <a href="wordle-eng.html" class="btn-lang">ENG</a>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════
+         MINI ABOUT HEADER
+    ═══════════════════════════════════ -->
+    <section id="aboutproject">
+        <div class="container">
+            <div class="about-content">
+                <div class="photo">
+                    <img src="../ressources/photo-louis.jpg"
+                         alt="Photo de Louis RIVES-LEHTINEN"
+                         class="profile-photo-project">
+                </div>
+                <div class="about-text">
+                    <p class="eyebrow">◆ &nbsp;PROJET UNIVERSITAIRE &nbsp;·&nbsp; ÉQUIPE DE 4&nbsp; ◆</p>
+                    <h1>Louis Rives-Lehtinen</h1>
+                    <p class="about-subtitle">Licence Informatique — CERI Avignon</p>
+                    <p class="about-subtitle">Erasmus — VUT Brno University of Technology</p>
+                    <a href="../ressources/LouisRivesCV.pdf" target="_blank" class="btn">⬇ &nbsp;Télécharger mon CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         DÉTAILS DU PROJET
+    ═══════════════════════════════════ -->
+    <section id="project-details">
+
+        <h2>Wordle — Multijoueur</h2>
+        <p class="project-subtitle">◆ &nbsp;JAVA &nbsp;·&nbsp; SERVEUR LOCAL &nbsp;·&nbsp; MULTIJOUEUR &nbsp;·&nbsp; BOTS IA&nbsp; ◆</p>
+
+        <div class="divider"><span>✦</span></div>
+
+        <div class="project-description">
+
+            <p>Ce projet a été réalisé en groupe de quatre étudiants dans le cadre d'un projet universitaire. L'objectif était de recréer le célèbre jeu de devinettes Wordle sous forme d'expérience multijoueur complète. Les joueurs se connectent à un serveur local, ce qui permet à toute personne connectée au même réseau de rejoindre une partie et de s'affronter en temps réel. Le jeu supporte également des bots IA pour compléter les lobbies en cas de jeu en solo ou avec peu de participants.</p>
+
+            <p>Le jeu repose sur un système de points : les joueurs gagnent des points en fonction de la rapidité et de la précision avec laquelle ils devinent le mot, ce qui favorise la compétition entre les manches. Un système de lobby permet de créer ou rejoindre des sessions avant le début de la partie, et un tableau des scores suit les performances de chaque joueur tout au long de la session.</p>
+
+            <p>Ma contribution a porté sur le <strong>système de bots IA</strong> — conception et implémentation des joueurs artificiels pouvant rejoindre une partie en l'absence de joueurs humains, avec une logique de devinette pour les rendre crédibles comme de vrais adversaires.</p>
+
+            <p><strong>Principales caractéristiques :</strong></p>
+            <ul>
+                <li>Multijoueur via un serveur sur réseau local</li>
+                <li>Création de lobby et mise en relation des joueurs</li>
+                <li>Bots IA pour jouer en solo ou compléter un lobby</li>
+                <li>Système de points sur plusieurs manches</li>
+                <li>Tableau des scores en temps réel</li>
+                <li>Développé en Java</li>
+            </ul>
+
+        </div>
+
+        <!-- ── Captures d'écran ── -->
+        <div class="image-btn-center">
+            <div class="project-images">
+                <img src="../ressources/wordle/game_portal.png" alt="Portail du jeu">
+                <img src="../ressources/wordle/server_creation.png" alt="Création du serveur">
+                <img src="../ressources/wordle/lobby.png" alt="Écran de lobby">
+                <img src="../ressources/wordle/wordle.png" alt="Gameplay Wordle">
+                <img src="../ressources/wordle/player_scores.png" alt="Scores des joueurs">
+            </div>
+        </div>
+
+        <!-- ── Tags ── -->
+        <div class="project-tags">
+            <span class="project-tag">Java</span>
+            <span class="project-tag">Serveur Local</span>
+            <span class="project-tag">Multijoueur</span>
+            <span class="project-tag">Bots IA</span>
+            <span class="project-tag">Wordle</span>
+            <span class="project-tag">Système de Points</span>
+            <span class="project-tag">Équipe de 4</span>
+            <span class="project-tag">CERI Avignon</span>
+        </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════ -->
+    <section id="contact" class="container">
+        <h2 class="section-heading">Contact</h2>
+        <div class="divider"><span>✦</span></div>
+        <p><a href="mailto:louisrives2003@gmail.com" class="social-link"><i class="fas fa-envelope"></i> louisrives2003@gmail.com</a></p>
+        <p><a href="tel:+33695298593" class="social-link"><i class="fas fa-phone"></i> +33 6 95 29 85 93</a></p>
+        <p><a href="https://www.linkedin.com/in/louis-rives-lehtinen-546127274/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+        <p><a href="https://github.com/LouisRives" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a></p>
+        <p><a href="https://steamcommunity.com/id/AceLouis/" target="_blank" class="social-link"><i class="fab fa-steam"></i> Steam</a></p>
+    </section>
+
+    <footer>
+        <p>◆ &nbsp;© 2026 Louis RIVES-LEHTINEN &nbsp;·&nbsp; TOUS DROITS RÉSERVÉS &nbsp;◆</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
