@@ -4,87 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Portfolio - Louis RIVES-LEHTINEN</title>
+    <title>Consumer Recall App — Louis RIVES-LEHTINEN</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
     <!-- Navigation -->
     <header>
         <nav>
             <ul>
                 <li><a href="../index-en.html#about">About</a></li>
-                <li><a href="../index-en.html#skills">Skills</a></li>
+                <li><a href="../index-en.html#skills">Journey</a></li>
                 <li><a href="../index-en.html#projects">Projects</a></li>
                 <li><a href="../index-en.html#contact">Contact</a></li>
             </ul>
         </nav>
-		<div class="language-switch">
-            <a href="../index.html" class="btn-lang">FR</a>
+        <div class="language-switch">
+            <a href="rappel-conso.html" class="btn-lang">FR</a>
         </div>
     </header>
 
-    <!-- About Section -->
+    <!-- ═══════════════════════════════════
+         MINI ABOUT HEADER
+    ═══════════════════════════════════ -->
     <section id="aboutproject">
         <div class="container">
             <div class="about-content">
                 <div class="photo">
-                    <img src="../ressources/photo-louis.jpg" alt="Photo of Louis RIVES-LEHTINEN" class="profile-photo-project">
+                    <img src="../ressources/photo-louis.jpg"
+                         alt="Photo of Louis RIVES-LEHTINEN"
+                         class="profile-photo-project">
                 </div>
                 <div class="about-text">
-                    <h1>Louis RIVES-LEHTINEN</h1>
-                    Bachelor's Degree in Computer Science | CERI Avignon <br>
-                    Erasmus | VUT Brno University of Technology
-                    </p> 
-                    <a href="../ressources/LouisRivesCV.pdf" target="_blank" class="btn">Download my CV</a>
+                    <p class="eyebrow">◆ &nbsp;MOBILE APP &nbsp;·&nbsp; UNIVERSITY PROJECT&nbsp; ◆</p>
+                    <h1>Louis Rives-Lehtinen</h1>
+                    <p class="about-subtitle">BSc Computer Science — CERI Avignon</p>
+                    <p class="about-subtitle">Erasmus — VUT Brno University of Technology</p>
+                    <a href="../ressources/LouisRivesCV.pdf" target="_blank" class="btn">⬇ &nbsp;Download CV</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════
+         PROJECT DETAILS
+    ═══════════════════════════════════ -->
     <section id="project-details">
+
         <h2>Consumer Recall Application</h2>
-        <p class="project-description">
-            <p>This project aims to create a mobile application using the API from the "rappel.conso.gouv.fr" website. The application allows tracking of product recalls, offering several key features: quick and detailed search of recalls, favorite product management, and customizable filters to sort results according to user preferences. It provides a smooth user experience with intuitive navigation options and a clear display of essential data, such as associated risks and compensation details.</p>
-            <p>I mainly worked on creating the database and managing the favorites, including adding and removing items, as well as creating the favorite page. I also developed the SecondFragment, enabling the display of recall details and managing their favorite status.</p>
-            <p>Main features:</p>
+        <p class="project-subtitle">◆ &nbsp;ANDROID &nbsp;·&nbsp; JAVA &nbsp;·&nbsp; REST API&nbsp; ◆</p>
+
+        <div class="divider"><span>✦</span></div>
+
+        <div class="project-description">
+
+            <p>This project aims to create a mobile application using the API from the "rappel.conso.gouv.fr" website. The application allows tracking of product recalls, offering several key features: quick and detailed search of recalls, favourite product management, and customisable filters to sort results according to user preferences. It provides a smooth user experience with intuitive navigation and a clear display of essential data, such as associated risks and compensation details.</p>
+
+            <p>I mainly worked on creating the database and managing the favourites, including adding and removing items, as well as building the favourites page. I also developed the SecondFragment, enabling the display of recall details and managing their favourite status.</p>
+
+            <p><strong>Main features:</strong></p>
             <ul>
-                <li>Mobile Application</li>
-                <li>Developed in JAVA</li>
-                <li>Recall search and display</li>
-                <li>Details display</li>
-                <li>Customizable sorting and filters</li>
-                <li>Favorites management</li>
+                <li>Mobile application for Android</li>
+                <li>Developed in Java</li>
+                <li>Recall search and display via REST API</li>
+                <li>Detailed recall view</li>
+                <li>Customisable sorting and filters</li>
+                <li>Favourites management with local database</li>
             </ul>
-        </p>
-        <div class="image-btn-center">
-              <div class="project-images-height">
-                  <img src="../ressources/rappel-conso/rappel_conso_1.JPG" alt="Image 1">
-                  <img src="../ressources/rappel-conso/rappel_conso_2.JPG" alt="Image 2">
-                  <img src="../ressources/rappel-conso/rappel_conso_3.JPG" alt="Image 3">
-                  <img src="../ressources/rappel-conso/rappel_conso_4.JPG" alt="Image 4">
-                  <img src="../ressources/rappel-conso/rappel_conso_5.JPG" alt="Image 5">
-                  <img src="../ressources/rappel-conso/rappel_conso_6.JPG" alt="Image 6">
-              </div>
-            <a href="ressources/rappel-conso/Project-Mobile-Report.pdf" class="btn">View Documentation</a>
-            <a href="https://github.com/LouisRives/app_rappelconso" class="btn">View on GitHub</a>
+
         </div>
+
+        <!-- ── Screenshots ── -->
+        <div class="image-btn-center">
+            <div class="project-images-height">
+                <img src="../ressources/rappel-conso/rappel_conso_1.JPG" alt="Recall list">
+                <img src="../ressources/rappel-conso/rappel_conso_2.JPG" alt="Recall detail">
+                <img src="../ressources/rappel-conso/rappel_conso_3.JPG" alt="Search">
+                <img src="../ressources/rappel-conso/rappel_conso_4.JPG" alt="Filters">
+                <img src="../ressources/rappel-conso/rappel_conso_5.JPG" alt="Favourites">
+                <img src="../ressources/rappel-conso/rappel_conso_6.JPG" alt="Settings">
+            </div>
+            <a href="../ressources/rappel-conso/Project-Mobile-Report.pdf" class="btn">
+                <i class="fas fa-file-pdf"></i>&nbsp; View Documentation
+            </a>
+            <a href="https://github.com/LouisRives/app_rappelconso" target="_blank" class="btn">
+                <i class="fab fa-github"></i>&nbsp; View on GitHub
+            </a>
+        </div>
+
+        <!-- ── Tags ── -->
+        <div class="project-tags">
+            <span class="project-tag">Java</span>
+            <span class="project-tag">Android</span>
+            <span class="project-tag">REST API</span>
+            <span class="project-tag">SQLite</span>
+            <span class="project-tag">Mobile App</span>
+            <span class="project-tag">Favourites System</span>
+            <span class="project-tag">CERI Avignon</span>
+        </div>
+
     </section>
 
-    <!-- Contact Section -->
+    <!-- ═══════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════ -->
     <section id="contact" class="container">
-        <h2>Contact</h2>
-        <p> <a href="mailto:louisrives2003@gmail.com" class="social-link"> <i class="fas fa-envelope"></i> louisrives2003@gmail.com </a> </p>
-        <p> <a href="tel:+33695298593" class="social-link"><i class="fas fa-phone"></i> +33 6 95 29 85 93 </a> </p>
-        <p> <a href="https://www.linkedin.com/in/louis-rives-lehtinen-546127274/" target="_blank" class="social-link"> <i class="fab fa-linkedin"></i> LinkedIn </a> </p>
-        <p> <a href="https://github.com/LouisRives" target="_blank" class="social-link"> <i class="fab fa-github"></i> GitHub </a> </p>
-        <p> <a href="https://steamcommunity.com/id/AceLouis/" target="_blank" class="social-link"> <i class="fab fa-steam"></i> Steam </a> </p>
+        <h2 class="section-heading">Contact</h2>
+        <div class="divider"><span>✦</span></div>
+        <p><a href="mailto:louisrives2003@gmail.com" class="social-link"><i class="fas fa-envelope"></i> louisrives2003@gmail.com</a></p>
+        <p><a href="tel:+33695298593" class="social-link"><i class="fas fa-phone"></i> +33 6 95 29 85 93</a></p>
+        <p><a href="https://www.linkedin.com/in/louis-rives-lehtinen-546127274/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+        <p><a href="https://github.com/LouisRives" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a></p>
+        <p><a href="https://steamcommunity.com/id/AceLouis/" target="_blank" class="social-link"><i class="fab fa-steam"></i> Steam</a></p>
     </section>
 
     <footer>
-        <p>© 2024 Louis RIVES-LEHTINEN - All rights reserved.</p>
+        <p>◆ &nbsp;© 2026 Louis RIVES-LEHTINEN &nbsp;·&nbsp; ALL RIGHTS RESERVED &nbsp;◆</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
