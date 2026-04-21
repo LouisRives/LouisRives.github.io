@@ -11,7 +11,7 @@
     --gold-2:      #e8c97a;
     --gold-dim:    #7a6530;
     --ember:       #d4622a;
-    --teal:        #4ab8b0;   
+    --teal:        #4ab8b0;   /* small Nintendo-ish pop */
 
     --text:        #ddd8cc;
     --text-dim:    #7a7468;
@@ -199,7 +199,7 @@ header nav ul li a:hover::before {
     box-shadow: var(--glow-gold);
 }
 
-/* ── About ───────────────────────────────── */
+/* ── About / Hero ───────────────────────────────── */
 #about {
     min-height: 100vh;
     display: flex;
@@ -291,7 +291,7 @@ header nav ul li a:hover::before {
     margin-bottom: 4px;
 }
 
-/* ── Skills section ───────────────────── */
+/* ── Journey / Skills section ───────────────────── */
 #skills {
     background-color: var(--bg-2);
     padding: 80px 0;
@@ -329,7 +329,7 @@ header nav ul li a:hover::before {
     position: relative;
 }
 
-/* Corner decoration */
+/* Corner decoration — RPG window chrome */
 .skills > div::before {
     content: '◆';
     position: absolute;
@@ -433,7 +433,7 @@ header nav ul li a:hover::before {
     filter: brightness(0.85) saturate(1);
 }
 
-/* Game badge style */
+/* Game "NEW" badge style — could add manually per project */
 .project-badge {
     position: absolute;
     top: 10px;
@@ -596,6 +596,91 @@ footer {
     transition: color var(--dur);
 }
 .close:hover { color: var(--gold); }
+
+/* ── Project detail pages ───────────────────────── */
+.project-subtitle {
+    font-family: var(--ff-pixel);
+    font-size: 0.5rem;
+    color: var(--text-dim);
+    text-align: center;
+    letter-spacing: 0.12em;
+    margin-bottom: 36px;
+}
+
+.project-description p {
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+.project-description em    { color: var(--gold-2); font-style: italic; }
+.project-description strong { color: var(--text); font-weight: 600; }
+
+/* Stat cards row — reusable across all project pages */
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 40px 0;
+    justify-content: center;
+}
+
+.project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 22px 32px;
+    min-width: 140px;
+    text-align: center;
+    transition: border-color var(--dur), box-shadow var(--dur);
+}
+
+.project-card:hover {
+    border-color: var(--gold);
+    box-shadow: var(--glow-gold);
+}
+
+.project-card-value {
+    font-family: var(--ff-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.project-card-label {
+    font-family: var(--ff-pixel);
+    font-size: 0.42rem;
+    color: var(--text-dim);
+    margin-top: 8px;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+}
+
+/* Tags */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 56px;
+}
+
+.project-tag {
+    font-family: var(--ff-pixel);
+    font-size: 0.4rem;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    padding: 7px 14px;
+    border-radius: 2px;
+    transition: color var(--dur), border-color var(--dur);
+}
+
+.project-tag:hover {
+    color: var(--gold);
+    border-color: var(--gold-dim);
+}
 
 /* ── Responsive ─────────────────────────────────── */
 @media (max-width: 768px) {
