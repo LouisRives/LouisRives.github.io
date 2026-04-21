@@ -4,85 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Portfolio - Louis RIVES-LEHTINEN</title>
+    <title>MapTrip — Louis RIVES-LEHTINEN</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+
     <!-- Navigation -->
     <header>
         <nav>
             <ul>
                 <li><a href="../index-en.html#about">About</a></li>
-                <li><a href="../index-en.html#skills">Skills</a></li>
+                <li><a href="../index-en.html#skills">Journey</a></li>
                 <li><a href="../index-en.html#projects">Projects</a></li>
                 <li><a href="../index-en.html#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="language-switch">
-            <a href="../index.html" class="btn-lang">FR</a>
+            <a href="maptrip.html" class="btn-lang">FR</a>
         </div>
     </header>
 
-    <!-- About Section -->
+    <!-- ═══════════════════════════════════
+         MINI ABOUT HEADER
+    ═══════════════════════════════════ -->
     <section id="aboutproject">
         <div class="container">
             <div class="about-content">
                 <div class="photo">
-                    <img src="../ressources/photo-louis.jpg" alt="Photo of Louis RIVES-LEHTINEN" class="profile-photo-project">
+                    <img src="../ressources/photo-louis.jpg"
+                         alt="Photo of Louis RIVES-LEHTINEN"
+                         class="profile-photo-project">
                 </div>
                 <div class="about-text">
-                    <h1>Louis RIVES-LEHTINEN</h1>
-                    Bachelor's in Computer Science | CERI Avignon <br>
-                    Erasmus | VUT Brno University of Technology
-                    </p> 
-                    <a href="../ressources/LouisRivesCV.pdf" target="_blank" class="btn">Download my CV</a>
+                    <p class="eyebrow">◆ &nbsp;MOBILE APP &nbsp;·&nbsp; ERASMUS &nbsp;·&nbsp; TEAM PROJECT&nbsp; ◆</p>
+                    <h1>Louis Rives-Lehtinen</h1>
+                    <p class="about-subtitle">BSc Computer Science — CERI Avignon</p>
+                    <p class="about-subtitle">Erasmus — VUT Brno University of Technology</p>
+                    <a href="../ressources/LouisRivesCV.pdf" target="_blank" class="btn">⬇ &nbsp;Download CV</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════
+         PROJECT DETAILS
+    ═══════════════════════════════════ -->
     <section id="project-details">
+
         <h2>Map'Trip</h2>
-        <p class="project-description">
-            <p>This project was carried out in a team of three during my Erasmus in the Czech Republic. The goal was to create a mobile application for all travelers, regardless of their age. The application works as an interactive map where you can add notes for each country you’ve visited. The purpose of these notes is to describe your travels: when you went, what you did, etc. The application serves as a memory book to keep a record of your adventures so that you never forget them.</p>
+        <p class="project-subtitle">◆ &nbsp;ANDROID &nbsp;·&nbsp; JAVA &nbsp;·&nbsp; GOOGLE MAPS API&nbsp; ◆</p>
+
+        <div class="divider"><span>✦</span></div>
+
+        <div class="project-description">
+
+            <p>This project was carried out in a team of three during my Erasmus in the Czech Republic. The goal was to create a mobile application for all travellers, regardless of their age. The application works as an interactive map where you can add notes for each country you've visited. The purpose of these notes is to describe your travels — when you went, what you did, and any other memories worth keeping. The application serves as a travel journal so you never forget your adventures.</p>
+
             <p>The application includes three tabs accessible from the bottom navigation bar: the first displays the map, the second is a list of all countries with the ability to edit or delete each note individually, and the last tab is dedicated to options. For my part, I handled the entirety of the first tab, including the integration of the map, retrieving data from the selected country, adding a search bar to find a country, and implementing the note-adding system.</p>
-            <p>Main features:</p>
+
+            <p><strong>Main features:</strong></p>
             <ul>
-                <li>Mobile application</li>
-                <li>Developed in JAVA</li>
-                <li>Map retrieval using the Google Maps API</li>
-                <li>Note storage system to save them even after the app is closed</li>
+                <li>Mobile application for Android</li>
+                <li>Developed in Java</li>
+                <li>Interactive map using the Google Maps API</li>
+                <li>Persistent note storage — data is saved after the app is closed</li>
             </ul>
-        </p>
-        <div class="image-btn-center">
-              <div class="project-images-height">
-                  <img src="../ressources/map-trip/map.jpg" alt="Image 1">
-                  <img src="../ressources/map-trip/map2.jpg" alt="Image 2">
-                  <img src="../ressources/map-trip/map3.jpg" alt="Image 3">
-                  <img src="../ressources/map-trip/map4.jpg" alt="Image 4">
-                  <img src="../ressources/map-trip/list-1.png" alt="Image 5">
-                  <img src="../ressources/map-trip/list-2.png" alt="Image 6">
-              </div>
-            <a href="../ressources/map-trip/technical-report-maptrip.pdf" class="btn">View the documentation</a>
-            <a href="https://github.com/LouisRives/ITUe-project-AndroidMapApp" class="btn">View on GitHub</a>
+
         </div>
+
+        <!-- ── Screenshots ── -->
+        <div class="image-btn-center">
+            <div class="project-images-height">
+                <img src="../ressources/map-trip/map.jpg" alt="Map view">
+                <img src="../ressources/map-trip/map2.jpg" alt="Map view 2">
+                <img src="../ressources/map-trip/map3.jpg" alt="Country selection">
+                <img src="../ressources/map-trip/map4.jpg" alt="Note editor">
+                <img src="../ressources/map-trip/list-1.png" alt="Country list">
+                <img src="../ressources/map-trip/list-2.png" alt="Country list detail">
+            </div>
+            <a href="../ressources/map-trip/technical-report-maptrip.pdf" class="btn">
+                <i class="fas fa-file-pdf"></i>&nbsp; View Documentation
+            </a>
+            <a href="https://github.com/LouisRives/ITUe-project-AndroidMapApp" target="_blank" class="btn">
+                <i class="fab fa-github"></i>&nbsp; View on GitHub
+            </a>
+        </div>
+
+        <!-- ── Tags ── -->
+        <div class="project-tags">
+            <span class="project-tag">Java</span>
+            <span class="project-tag">Android</span>
+            <span class="project-tag">Google Maps API</span>
+            <span class="project-tag">Mobile App</span>
+            <span class="project-tag">Erasmus</span>
+            <span class="project-tag">Team of 3</span>
+            <span class="project-tag">VUT Brno</span>
+        </div>
+
     </section>
 
-    <!-- Contact Section -->
+    <!-- ═══════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════ -->
     <section id="contact" class="container">
-        <h2>Contact</h2>
-        <p> <a href="mailto:louisrives2003@gmail.com" class="social-link"> <i class="fas fa-envelope"></i> louisrives2003@gmail.com </a> </p>
-        <p> <a href="tel:+33695298593" class="social-link"><i class="fas fa-phone"></i> +33 6 95 29 85 93 </a> </p>
-        <p> <a href="https://www.linkedin.com/in/louis-rives-lehtinen-546127274/" target="_blank" class="social-link"> <i class="fab fa-linkedin"></i> LinkedIn </a> </p>
-        <p> <a href="https://github.com/LouisRives" target="_blank" class="social-link"> <i class="fab fa-github"></i> GitHub </a> </p>
-        <p> <a href="https://steamcommunity.com/id/AceLouis/" target="_blank" class="social-link"> <i class="fab fa-steam"></i> Steam </a> </p>
+        <h2 class="section-heading">Contact</h2>
+        <div class="divider"><span>✦</span></div>
+        <p><a href="mailto:louisrives2003@gmail.com" class="social-link"><i class="fas fa-envelope"></i> louisrives2003@gmail.com</a></p>
+        <p><a href="tel:+33695298593" class="social-link"><i class="fas fa-phone"></i> +33 6 95 29 85 93</a></p>
+        <p><a href="https://www.linkedin.com/in/louis-rives-lehtinen-546127274/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+        <p><a href="https://github.com/LouisRives" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a></p>
+        <p><a href="https://steamcommunity.com/id/AceLouis/" target="_blank" class="social-link"><i class="fab fa-steam"></i> Steam</a></p>
     </section>
 
     <footer>
-        <p>© 2024 Louis RIVES-LEHTINEN - All rights reserved.</p>
+        <p>◆ &nbsp;© 2026 Louis RIVES-LEHTINEN &nbsp;·&nbsp; ALL RIGHTS RESERVED &nbsp;◆</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
