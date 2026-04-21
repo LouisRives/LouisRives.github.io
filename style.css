@@ -521,6 +521,10 @@ footer {
     text-align: center;
 }
 
+/* Disable the spinning ring for the smaller project-page photo */
+#aboutproject .photo::before,
+#aboutproject .photo::after { display: none; }
+
 .profile-photo-project {
     width: 160px;
     height: 160px;
