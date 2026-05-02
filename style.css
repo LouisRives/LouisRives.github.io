@@ -203,7 +203,9 @@ header nav ul li a:hover::before {
     text-decoration: none;
     border: none;
     cursor: pointer;
-    transition: background var(--dur), box-shadow var(--dur);
+    position: relative;
+    overflow: hidden;
+    transition: background var(--dur), box-shadow var(--dur), transform 0.1s ease;
 }
 .btn:hover {
     background: var(--gold-2);
@@ -716,6 +718,129 @@ footer {
 .project-tag:hover {
     color: var(--gold);
     border-color: var(--gold-dim);
+}
+
+/* ── Game page ───────────────────────────────────── */
+#game-section {
+    padding: 60px 0 80px;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+}
+
+.canvas-wrap {
+    max-width: 700px;
+    margin: 24px auto 0;
+}
+
+.canvas-wrap canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    cursor: crosshair;
+}
+
+.game-hint {
+    text-align: center;
+    font-family: var(--ff-pixel);
+    font-size: 0.48rem;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    margin-top: 0;
+}
+
+/* Play button in nav */
+.nav-play {
+    color: var(--gold) !important;
+    opacity: 0.85;
+}
+.nav-play:hover {
+    opacity: 1;
+    border-bottom-color: var(--gold) !important;
+}
+
+/* ── Game modal (Konami easter egg) ─────────────── */
+#gameModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+#gameModal.gm-active { display: flex; }
+
+.gm-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(11,11,16,0.94);
+    animation: gmFadeIn 0.18s ease;
+}
+
+.gm-window {
+    position: relative;
+    z-index: 1;
+    width: min(740px, 95vw);
+    background: var(--bg);
+    border: 1px solid var(--gold);
+    animation: gmSlideIn 0.2s ease;
+    box-shadow: 0 0 60px rgba(201,168,76,0.15);
+}
+
+@keyframes gmFadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes gmSlideIn { from { transform: scale(0.92) translateY(-20px); opacity: 0; }
+                       to   { transform: scale(1)    translateY(0);      opacity: 1; } }
+
+.gm-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-2);
+}
+
+.gm-title {
+    font-family: var(--ff-pixel);
+    font-size: 0.55rem;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    flex: 1;
+    text-align: center;
+}
+
+.gm-corner { font-size: 0.45rem; color: var(--gold-dim); opacity: 0.6; }
+
+.gm-close {
+    font-family: var(--ff-pixel);
+    font-size: 0.42rem;
+    color: var(--text-dim);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    cursor: pointer;
+    letter-spacing: 0.08em;
+    transition: color var(--dur), border-color var(--dur);
+}
+.gm-close:hover { color: var(--gold); border-color: var(--gold); }
+
+.gm-body iframe {
+    width: 100%;
+    aspect-ratio: 700 / 420;
+    display: block;
+    border: none;
+}
+
+.gm-footer {
+    padding: 9px 16px;
+    border-top: 1px solid var(--border);
+    font-family: var(--ff-pixel);
+    font-size: 0.38rem;
+    color: var(--text-faint);
+    text-align: center;
+    letter-spacing: 0.08em;
+    background: var(--bg-2);
 }
 
 /* ── Responsive ─────────────────────────────────── */

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyper Pulsar Mini — Louis RIVES-LEHTINEN</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index-en.html#about">About</a></li>
+                <li><a href="index-en.html#skills">Journey</a></li>
+                <li><a href="index-en.html#projects">Projects</a></li>
+                <li><a href="index-en.html#contact">Contact</a></li>
+                <li><a href="game.html" class="nav-play">▶ PLAY</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch">
+            <a href="index.html" class="btn-lang">FR</a>
+        </div>
+    </header>
+
+    <section id="game-section">
+        <div class="container">
+            <h2 class="section-heading">Hyper Pulsar Mini</h2>
+            <div class="divider"><span>✦</span></div>
+            <p class="game-hint">WASD &nbsp;·&nbsp; MOVE &nbsp;&nbsp;|&nbsp;&nbsp; MOUSE &nbsp;·&nbsp; AIM &nbsp;&nbsp;|&nbsp;&nbsp; CLICK / SPACE &nbsp;·&nbsp; SHOOT</p>
+
+            <div class="canvas-wrap">
+                <canvas id="gameCanvas" width="700" height="420"></canvas>
+            </div>
+
+            <div class="project-tags" style="margin-top: 20px; justify-content: center;">
+                <span class="project-tag">Grunts · Speeders · Tanks</span>
+                <span class="project-tag">Infinite waves</span>
+                <span class="project-tag">High score</span>
+                <span class="project-tag">Desktop recommended</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>◆ &nbsp;© 2026 Louis RIVES-LEHTINEN &nbsp;·&nbsp; ALL RIGHTS RESERVED &nbsp;◆</p>
+    </footer>
+
+    <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx    = canvas.getContext('2d');
+    const W = canvas.width;
+    const H = canvas.height;
+
+    const keys  = {};
+    const mouse = { x: W/2, y: H/2, down: false };
+
+    window.addEventListener('keydown', e => {
+        keys[e.key] = true;
+        if ([' ', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) e.preventDefault();
+    });
+    window.addEventListener('keyup', e => { keys[e.key] = false; });
+    canvas.addEventListener('mousemove', e => {
+        const r = canvas.getBoundingClientRect();
+        mouse.x = (e.clientX - r.left) * (W / r.width);
+        mouse.y = (e.clientY - r.top)  * (H / r.height);
+    });
+    canvas.addEventListener('mousedown', () => mouse.down = true);
+    canvas.addEventListener('mouseup',   () => mouse.down = false);
+
+    let state = 'start';
+    let score = 0, highScore = 0;
+    let frameCount = 0, wave = 1;
+    let spawnInterval = 90, spawnTimer = 0, shootCooldown = 0;
+
+    const player = { x: W/2, y: H/2, speed: 3.5, hp: 3, maxHp: 3, invincible: 0, angle: 0, size: 10 };
+    let bullets = [], enemies = [], particles = [];
+
+    function reset() {
+        Object.assign(player, { x: W/2, y: H/2, hp: 3, invincible: 0 });
+        bullets = []; enemies = []; particles = [];
+        score = 0; frameCount = 0; wave = 1;
+        spawnInterval = 90; spawnTimer = 0; shootCooldown = 0;
+        state = 'playing';
+    }
+
+    function burst(x, y, color, n) {
+        for (let i = 0; i < n; i++) {
+            const a = Math.random() * Math.PI * 2;
+            const s = Math.random() * 3 + 0.5;
+            particles.push({ x, y, vx: Math.cos(a)*s, vy: Math.sin(a)*s, life: 35 + Math.random()*20, maxLife: 55, color, sz: Math.random()*3+1 });
+        }
+    }
+
+    function tryShoot() {
+        if (shootCooldown > 0) return;
+        const a = Math.atan2(mouse.y - player.y, mouse.x - player.x);
+        bullets.push({ x: player.x, y: player.y, vx: Math.cos(a)*9, vy: Math.sin(a)*9, life: 65 });
+        shootCooldown = 10;
+    }
+
+    function spawnEnemy() {
+        const side = Math.floor(Math.random() * 4);
+        let x, y;
+        if (side === 0) { x = Math.random() * W; y = -20; }
+        else if (side === 1) { x = W + 20; y = Math.random() * H; }
+        else if (side === 2) { x = Math.random() * W; y = H + 20; }
+        else { x = -20; y = Math.random() * H; }
+        const r = Math.random();
+        const type = (wave >= 5 && r > 0.88) ? 'tank' : (wave >= 3 && r > 0.72) ? 'speeder' : 'grunt';
+        enemies.push({
+            x, y, type, angle: 0,
+            size:  type === 'tank' ? 15 : type === 'speeder' ? 7 : 10,
+            speed: type === 'tank' ? 0.9 : type === 'speeder' ? 2.8 : 1.5,
+            hp:    type === 'tank' ? 3 : 1,
+            maxHp: type === 'tank' ? 3 : 1,
+        });
+    }
+
+    function update() {
+        if (state !== 'playing') return;
+        frameCount++;
+        wave = Math.floor(frameCount / 600) + 1;
+
+        let dx = 0, dy = 0;
+        if (keys['w'] || keys['W'] || keys['ArrowUp'])    dy -= 1;
+        if (keys['s'] || keys['S'] || keys['ArrowDown'])  dy += 1;
+        if (keys['a'] || keys['A'] || keys['ArrowLeft'])  dx -= 1;
+        if (keys['d'] || keys['D'] || keys['ArrowRight']) dx += 1;
+        const len = Math.sqrt(dx*dx + dy*dy);
+        if (len > 0) { dx /= len; dy /= len; }
+        player.x = Math.max(player.size, Math.min(W - player.size, player.x + dx * player.speed));
+        player.y = Math.max(player.size, Math.min(H - player.size, player.y + dy * player.speed));
+        player.angle = Math.atan2(mouse.y - player.y, mouse.x - player.x);
+
+        if (mouse.down || keys[' ']) tryShoot();
+        if (shootCooldown  > 0) shootCooldown--;
+        if (player.invincible > 0) player.invincible--;
+
+        spawnTimer++;
+        if (spawnTimer >= spawnInterval) {
+            spawnEnemy();
+            spawnTimer = 0;
+            spawnInterval = Math.max(18, spawnInterval - 0.4);
+        }
+
+        bullets = bullets.filter(b => {
+            b.x += b.vx; b.y += b.vy; b.life--;
+            return b.life > 0 && b.x > -10 && b.x < W+10 && b.y > -10 && b.y < H+10;
+        });
+
+        for (const e of enemies) {
+            const a = Math.atan2(player.y - e.y, player.x - e.x);
+            e.x += Math.cos(a) * e.speed;
+            e.y += Math.sin(a) * e.speed;
+            e.angle = a;
+        }
+
+        const aliveBullets = [];
+        for (const b of bullets) {
+            let hit = false;
+            for (const e of enemies) {
+                const dx = b.x - e.x, dy = b.y - e.y;
+                if (Math.sqrt(dx*dx + dy*dy) < e.size + 4) {
+                    e.hp--;
+                    burst(e.x, e.y, '#c9a84c', 5);
+                    hit = true; break;
+                }
+            }
+            if (!hit) aliveBullets.push(b);
+        }
+        bullets = aliveBullets;
+
+        const aliveEnemies = [];
+        for (const e of enemies) {
+            if (e.hp <= 0) {
+                score += e.type === 'tank' ? 30 : e.type === 'speeder' ? 20 : 10;
+                burst(e.x, e.y, '#e8c97a', 14);
+            } else {
+                aliveEnemies.push(e);
+            }
+        }
+        enemies = aliveEnemies;
+
+        if (player.invincible <= 0) {
+            for (const e of enemies) {
+                const dx = player.x - e.x, dy = player.y - e.y;
+                if (Math.sqrt(dx*dx + dy*dy) < player.size + e.size - 3) {
+                    player.hp--;
+                    player.invincible = 70;
+                    burst(player.x, player.y, '#d4622a', 10);
+                    if (player.hp <= 0) {
+                        burst(player.x, player.y, '#d4622a', 22);
+                        if (score > highScore) highScore = score;
+                        state = 'dead';
+                    }
+                    break;
+                }
+            }
+        }
+
+        particles = particles.filter(p => {
+            p.x += p.vx; p.y += p.vy;
+            p.vx *= 0.91; p.vy *= 0.91;
+            p.life--;
+            return p.life > 0;
+        });
+    }
+
+    function draw() {
+        ctx.fillStyle = '#0b0b10';
+        ctx.fillRect(0, 0, W, H);
+
+        ctx.strokeStyle = 'rgba(201,168,76,0.04)';
+        ctx.lineWidth = 1;
+        for (let x = 0; x < W; x += 40) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+        for (let y = 0; y < H; y += 40) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+
+        for (const p of particles) {
+            ctx.globalAlpha = p.life / p.maxLife;
+            ctx.fillStyle = p.color;
+            ctx.fillRect(p.x - p.sz/2, p.y - p.sz/2, p.sz, p.sz);
+        }
+        ctx.globalAlpha = 1;
+
+        ctx.fillStyle = '#e8c97a';
+        for (const b of bullets) {
+            ctx.beginPath(); ctx.arc(b.x, b.y, 3, 0, Math.PI*2); ctx.fill();
+        }
+
+        for (const e of enemies) {
+            ctx.save();
+            ctx.translate(e.x, e.y);
+            ctx.rotate(e.angle);
+            if (e.type === 'grunt') {
+                ctx.fillStyle = '#7a7aa0';
+                ctx.beginPath();
+                ctx.moveTo(e.size, 0); ctx.lineTo(0, e.size);
+                ctx.lineTo(-e.size, 0); ctx.lineTo(0, -e.size);
+                ctx.closePath(); ctx.fill();
+            } else if (e.type === 'speeder') {
+                ctx.fillStyle = '#c04040';
+                ctx.beginPath();
+                ctx.moveTo(e.size*1.3, 0); ctx.lineTo(-e.size, e.size); ctx.lineTo(-e.size, -e.size);
+                ctx.closePath(); ctx.fill();
+            } else {
+                ctx.fillStyle = '#446688';
+                ctx.fillRect(-e.size, -e.size, e.size*2, e.size*2);
+                ctx.fillStyle = '#1a1a22';
+                ctx.fillRect(-e.size, -e.size - 7, e.size*2, 4);
+                ctx.fillStyle = '#4aaa77';
+                ctx.fillRect(-e.size, -e.size - 7, e.size*2*(e.hp/e.maxHp), 4);
+            }
+            ctx.restore();
+        }
+
+        if (state === 'playing' && !(player.invincible > 0 && Math.floor(player.invincible/4) % 2 === 0)) {
+            ctx.save();
+            ctx.translate(player.x, player.y);
+            ctx.rotate(player.angle);
+            ctx.fillStyle = '#c9a84c';
+            ctx.beginPath();
+            ctx.moveTo(13, 0); ctx.lineTo(-9, -8); ctx.lineTo(-4, 0); ctx.lineTo(-9, 8);
+            ctx.closePath(); ctx.fill();
+            ctx.restore();
+        }
+
+        if (state === 'playing') {
+            ctx.font = '9px "Press Start 2P",monospace';
+            ctx.textAlign = 'left';
+            ctx.fillStyle = '#c9a84c'; ctx.fillText('SCORE  ' + score,     14, 22);
+            ctx.fillStyle = '#7a6530'; ctx.fillText('BEST   ' + highScore,  14, 40);
+            ctx.fillStyle = '#555';    ctx.fillText('WAVE   ' + wave,       14, 58);
+            for (let i = 0; i < player.maxHp; i++) {
+                ctx.fillStyle = i < player.hp ? '#d4622a' : '#2a2a2a';
+                ctx.font = '16px sans-serif';
+                ctx.fillText('♥', W - 28 - i * 24, 24);
+            }
+        }
+
+        if (state === 'start') {
+            ctx.fillStyle = 'rgba(11,11,16,0.9)';
+            ctx.fillRect(0, 0, W, H);
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#c9a84c';
+            ctx.font = '18px "Press Start 2P",monospace';
+            ctx.fillText('HYPER PULSAR', W/2, H/2 - 64);
+            ctx.fillStyle = '#7a6530';
+            ctx.font = '7px "Press Start 2P",monospace';
+            ctx.fillText('M I N I', W/2, H/2 - 42);
+            ctx.fillStyle = '#7a7468';
+            ctx.font = '8px "Press Start 2P",monospace';
+            ctx.fillText('WASD  ·  MOVE', W/2, H/2 + 8);
+            ctx.fillText('MOUSE  ·  AIM & SHOOT', W/2, H/2 + 28);
+            ctx.fillStyle = '#444';
+            ctx.font = '7px "Press Start 2P",monospace';
+            ctx.fillText('GRUNT +10  ·  SPEEDER +20  ·  TANK +30', W/2, H/2 + 50);
+            if (Math.floor(Date.now()/500) % 2 === 0) {
+                ctx.fillStyle = '#c9a84c';
+                ctx.font = '8px "Press Start 2P",monospace';
+                ctx.fillText('CLICK TO START', W/2, H/2 + 80);
+            }
+        }
+
+        if (state === 'dead') {
+            ctx.fillStyle = 'rgba(11,11,16,0.88)';
+            ctx.fillRect(0, 0, W, H);
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#d4622a';
+            ctx.font = '18px "Press Start 2P",monospace';
+            ctx.fillText('YOU DIED', W/2, H/2 - 58);
+            ctx.font = '9px "Press Start 2P",monospace';
+            ctx.fillStyle = '#c9a84c';
+            ctx.fillText('SCORE  ' + score, W/2, H/2 + 4);
+            if (score >= highScore && score > 0) {
+                ctx.fillStyle = '#e8c97a';
+                ctx.fillText('NEW BEST!', W/2, H/2 + 26);
+            } else {
+                ctx.fillStyle = '#7a6530';
+                ctx.fillText('BEST  ' + highScore, W/2, H/2 + 26);
+            }
+            if (Math.floor(Date.now()/500) % 2 === 0) {
+                ctx.fillStyle = '#ddd8cc';
+                ctx.font = '7px "Press Start 2P",monospace';
+                ctx.fillText('CLICK TO RETRY', W/2, H/2 + 64);
+            }
+        }
+
+        ctx.textAlign = 'left';
+    }
+
+    canvas.addEventListener('click', () => {
+        if (state === 'start' || state === 'dead') reset();
+    });
+
+    function loop() { update(); draw(); requestAnimationFrame(loop); }
+    loop();
+    </script>
+
+</body>
+</html>
