@@ -1,3 +1,14 @@
+/* ================================================
+   LOUIS RIVES-LEHTINEN — PORTFOLIO
+   Dark RPG / Game Dev aesthetic
+   Souls-like atmosphere · Nintendo soul · Pixel heart
+   ================================================ */
+
+/* Fonts loaded via HTML:
+   Cinzel (display/headings) — epic, souls-like
+   Press Start 2P (pixel labels) — retro game feel
+   Rajdhani (body) — clean, technical              */
+
 /* ── Variables ──────────────────────────────────── */
 :root {
     --bg:          #0b0b10;
@@ -715,7 +726,33 @@ footer {
     .profile-photo { width: 200px; height: 200px; }
     .skills { flex-direction: column; }
     .project-list { grid-template-columns: 1fr; }
-    header nav ul li a { font-size: 0.5rem; padding: 0 10px; }
+
+    /* Stack lang button below nav links so nothing overlaps */
+    header {
+        padding: 6px 0;
+    }
+    header nav {
+        height: auto;
+        flex-direction: column;
+        gap: 4px;
+        padding-bottom: 6px;
+    }
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    header nav ul li a {
+        font-size: 0.42rem;
+        padding: 0 10px;
+        height: 36px;
+    }
+    .language-switch {
+        position: static;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 6px;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
