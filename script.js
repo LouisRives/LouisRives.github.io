@@ -96,20 +96,20 @@ function lerp(a, b, t) { return a + (b - a) * t; }
     ctx.fillStyle   = '#c9a84c';
     ctx.font        = '9px "Press Start 2P", monospace';
     ctx.textAlign   = 'center';
-    ctx.fillText('\u2191  \u2191  \u2193  \u2193  \u2190  \u2192  \u2190  \u2192  B  A', W / 2, H * 0.88);
+    ctx.fillText('\u2191 \u2191 \u2193 \u2193 \u2190 \u2192 \u2190 \u2192 B A', W / 2, H * 0.88);
     ctx.restore();
 
     /* 2 — Fog of war */
-    const fog = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 370);
+    const fog = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 200);
     fog.addColorStop(0,    'rgba(11,11,16,0)');
-    fog.addColorStop(0.20, 'rgba(11,11,16,0.04)');
-    fog.addColorStop(0.48, 'rgba(11,11,16,0.58)');
-    fog.addColorStop(1,    'rgba(11,11,16,0.92)');
+    fog.addColorStop(0.30, 'rgba(11,11,16,0.08)');
+    fog.addColorStop(0.65, 'rgba(11,11,16,0.72)');
+    fog.addColorStop(1,    'rgba(11,11,16,1)');
     ctx.fillStyle = fog;
     ctx.fillRect(0, 0, W, H);
 
     /* 3 — Gold shimmer */
-    const glow = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 170);
+    const glow = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 90);
     glow.addColorStop(0, 'rgba(201,168,76,0.16)');
     glow.addColorStop(1, 'rgba(201,168,76,0)');
     ctx.fillStyle = glow;
