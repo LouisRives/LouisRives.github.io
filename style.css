@@ -1,14 +1,3 @@
-/* ================================================
-   LOUIS RIVES-LEHTINEN — PORTFOLIO
-   Dark RPG / Game Dev aesthetic
-   Souls-like atmosphere · Nintendo soul · Pixel heart
-   ================================================ */
-
-/* Fonts loaded via HTML:
-   Cinzel (display/headings) — epic, souls-like
-   Press Start 2P (pixel labels) — retro game feel
-   Rajdhani (body) — clean, technical              */
-
 /* ── Variables ──────────────────────────────────── */
 :root {
     --bg:          #0b0b10;
@@ -22,7 +11,7 @@
     --gold-2:      #e8c97a;
     --gold-dim:    #7a6530;
     --ember:       #d4622a;
-    --teal:        #4ab8b0;   /* small Nintendo-ish pop */
+    --teal:        #4ab8b0;   
 
     --text:        #ddd8cc;
     --text-dim:    #7a7468;
@@ -212,7 +201,7 @@ header nav ul li a:hover::before {
     box-shadow: var(--glow-gold);
 }
 
-/* ── About / Hero ───────────────────────────────── */
+/* ── About ───────────────────────────────── */
 #about {
     min-height: 100vh;
     display: flex;
@@ -304,7 +293,7 @@ header nav ul li a:hover::before {
     margin-bottom: 4px;
 }
 
-/* ── Journey / Skills section ───────────────────── */
+/* ── Skills section ───────────────────── */
 #skills {
     background-color: var(--bg-2);
     padding: 80px 0;
@@ -342,7 +331,7 @@ header nav ul li a:hover::before {
     position: relative;
 }
 
-/* Corner decoration — RPG window chrome */
+/* Corner decoration  */
 .skills > div::before {
     content: '◆';
     position: absolute;
@@ -446,7 +435,7 @@ header nav ul li a:hover::before {
     filter: brightness(0.85) saturate(1);
 }
 
-/* Game "NEW" badge style — could add manually per project */
+/* Game "NEW" badge style */
 .project-badge {
     position: absolute;
     top: 10px;
@@ -653,7 +642,7 @@ footer {
     flex-shrink: 0;
 }
 
-/* Stat cards row — reusable across all project pages */
+/* Stat cards row */
 .project-meta {
     display: flex;
     flex-wrap: wrap;
