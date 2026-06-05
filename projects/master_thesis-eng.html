@@ -14,42 +14,43 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Page-local additive styles (do not modify style.css). Scoped to
-         .takeaways so they only affect this list and cannot touch other pages. -->
+    <!-- Page-local additive styles (do not modify style.css). Scoped to the
+         .takeaway* classes so they only affect this section and cannot touch other pages.
+         Uses <div> blocks (not ul/li), so the shared inline-flex list rule never applies. -->
     <style>
-      .project-description ul.takeaways {
-          list-style: none;
-          margin: 18px 0 26px;
-          padding: 0;
-      }
-      .project-description ul.takeaways li {
-          display: block;                 /* overrides the shared inline-flex list rule */
+      .project-description .takeaways { margin: 18px 0 26px; }
+      .project-description .takeaway {
           position: relative;
-          padding: 0 0 14px 1.6em;
+          padding: 0 0 14px 1.5em;
           margin-bottom: 14px;
           border-bottom: 1px solid var(--text-faint);
-          text-align: left;
-          line-height: 1.7;
       }
-      .project-description ul.takeaways li:last-child {
+      .project-description .takeaway:last-child {
           margin-bottom: 0;
           padding-bottom: 0;
           border-bottom: none;
       }
-      .project-description ul.takeaways li::before {
+      .project-description .takeaway::before {
           content: '▸';
           position: absolute;
           left: 0;
-          top: 0.1em;
+          top: 0.05em;
           color: var(--gold);
-          font-size: 0.7rem;
-          line-height: 1.7;
+          font-size: 0.8rem;
       }
-      .project-description ul.takeaways li strong {
-          display: block;                 /* lead-in becomes its own heading line */
-          margin-bottom: 5px;
+      .project-description .takeaway-title {
+          font-family: var(--ff-body);
+          font-size: 1.08rem;
+          font-weight: 700;
           color: var(--text-bright);
-          font-weight: 600;
+          margin-bottom: 4px;
+          text-align: left;
+      }
+      .project-description .takeaway-desc {
+          margin: 0;
+          color: var(--text-dim);
+          line-height: 1.7;
+          text-align: left;
       }
     </style>
 </head>
@@ -152,33 +153,24 @@
                 for anyone designing onboarding:
             </p>
 
-            <ul class="takeaways">
-                <li>
-                    <strong>Front-loaded text tutorials are the worst format.</strong> Dumping
-                    mechanics on players right before they play overloads working memory at the exact
-                    moment they need it free. Just-in-time tooltips and in-context prompts at first
-                    encounter teach the same content without the cognitive tax.
-                </li>
-                <li>
-                    <strong>Players are poor judges of what helped them.</strong> In playtests they
-                    reliably rate the more thorough tutorial as "better" — even when it left them
-                    performing worse and feeling less competent. "Was the tutorial helpful?" measures
-                    what was <em>covered</em>, not what actually <em>worked</em>.
-                </li>
-                <li>
-                    <strong>Measure competence, not satisfaction.</strong> Track signals that don't
-                    depend on the player's opinion — time to first checkpoint, retries before
-                    progressing, damage taken in the first fight, how much of the area they explored.
-                    These predict whether players keep going far better than tutorial ratings do.
-                </li>
-                <li>
-                    <strong>Adaptive onboarding should read behaviour, not ask questions.</strong> A
-                    pre-game personality quiz gets gamed (players pick whatever yields the shorter
-                    tutorial) and few players tolerate it. Inferring play style from the first few
-                    minutes — who reads versus skips, explores versus rushes — can't be gamed and
-                    needs no questionnaire.
-                </li>
-            </ul>
+            <div class="takeaways">
+                <div class="takeaway">
+                    <div class="takeaway-title">Front-loaded text tutorials are the worst format.</div>
+                    <div class="takeaway-desc">Dumping mechanics on players right before they play overloads working memory at the exact moment they need it free. Just-in-time tooltips and in-context prompts at first encounter teach the same content without the cognitive tax.</div>
+                </div>
+                <div class="takeaway">
+                    <div class="takeaway-title">Players are poor judges of what helped them.</div>
+                    <div class="takeaway-desc">In playtests they reliably rate the more thorough tutorial as "better" — even when it left them performing worse and feeling less competent. "Was the tutorial helpful?" measures what was <em>covered</em>, not what actually <em>worked</em>.</div>
+                </div>
+                <div class="takeaway">
+                    <div class="takeaway-title">Measure competence, not satisfaction.</div>
+                    <div class="takeaway-desc">Track signals that don't depend on the player's opinion — time to first checkpoint, retries before progressing, damage taken in the first fight, how much of the area they explored. These predict whether players keep going far better than tutorial ratings do.</div>
+                </div>
+                <div class="takeaway">
+                    <div class="takeaway-title">Adaptive onboarding should read behaviour, not ask questions.</div>
+                    <div class="takeaway-desc">A pre-game personality quiz gets gamed (players pick whatever yields the shorter tutorial) and few players tolerate it. Inferring play style from the first few minutes — who reads versus skips, explores versus rushes — can't be gamed and needs no questionnaire.</div>
+                </div>
+            </div>
 
             <p class="project-subtitle">◆ &nbsp;THE BIGGER QUESTION&nbsp; ◆</p>
 
