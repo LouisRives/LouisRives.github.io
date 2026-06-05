@@ -606,7 +606,7 @@ footer {
 /* ── Project detail pages ───────────────────────── */
 .project-subtitle {
     font-family: var(--ff-pixel);
-    font-size: 0.8rem;
+    font-size: 4rem;
     color: var(--text-dim);
     text-align: center;
     letter-spacing: 0.12em;
