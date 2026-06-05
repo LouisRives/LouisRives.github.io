@@ -13,6 +13,45 @@
 
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Styles additifs locaux à la page (ne modifient pas style.css). Limités à
+         .takeaways : n'affectent que cette liste, jamais les autres pages. -->
+    <style>
+      .project-description ul.takeaways {
+          list-style: none;
+          margin: 18px 0 26px;
+          padding: 0;
+      }
+      .project-description ul.takeaways li {
+          display: block;                 /* remplace la règle de liste flex partagée */
+          position: relative;
+          padding: 0 0 14px 1.6em;
+          margin-bottom: 14px;
+          border-bottom: 1px solid var(--text-faint);
+          text-align: left;
+          line-height: 1.7;
+      }
+      .project-description ul.takeaways li:last-child {
+          margin-bottom: 0;
+          padding-bottom: 0;
+          border-bottom: none;
+      }
+      .project-description ul.takeaways li::before {
+          content: '▸';
+          position: absolute;
+          left: 0;
+          top: 0.1em;
+          color: var(--gold);
+          font-size: 0.7rem;
+          line-height: 1.7;
+      }
+      .project-description ul.takeaways li strong {
+          display: block;                 /* l'amorce devient sa propre ligne-titre */
+          margin-bottom: 5px;
+          color: var(--text-bright);
+          font-weight: 600;
+      }
+    </style>
 </head>
 <body>
 
@@ -115,29 +154,29 @@
                 concrets pour quiconque conçoit une prise en main :
             </p>
 
-            <ul style="margin:0.4rem 0 0; padding-left:1.2rem; line-height:1.65;">
-                <li style="margin-bottom:0.85rem;">
+            <ul class="takeaways">
+                <li>
                     <strong>Le tutoriel texte présenté avant de jouer est le pire format.</strong>
                     Déverser les mécaniques sur le joueur juste avant qu'il ne joue sature sa mémoire
                     de travail au moment précis où il en a le plus besoin. Des infobulles « au bon
                     moment » et des indications en contexte, dès la première rencontre, enseignent la
                     même chose sans cette surcharge cognitive.
                 </li>
-                <li style="margin-bottom:0.85rem;">
+                <li>
                     <strong>Les joueurs jugent mal ce qui les a aidés.</strong> En playtest, ils
                     notent systématiquement le tutoriel le plus complet comme « meilleur » — même
                     quand il les a fait moins bien jouer et se sentir moins compétents. « Le tutoriel
                     était-il utile ? » mesure ce qui a été <em>couvert</em>, pas ce qui a réellement
                     <em>fonctionné</em>.
                 </li>
-                <li style="margin-bottom:0.85rem;">
+                <li>
                     <strong>Mesurer la compétence, pas la satisfaction.</strong> Suivre des signaux
                     qui ne dépendent pas de l'avis du joueur — temps jusqu'au premier point de
                     sauvegarde, nombre d'essais avant de progresser, dégâts subis au premier combat,
                     part de la zone explorée. Ils prédisent bien mieux que les notes de tutoriel si le
                     joueur va continuer.
                 </li>
-                <li style="margin-bottom:0.2rem;">
+                <li>
                     <strong>Une prise en main adaptative doit lire le comportement, pas poser de
                     questions.</strong> Un quiz de personnalité avant la partie se contourne (le
                     joueur choisit ce qui donne le tutoriel le plus court) et peu de joueurs

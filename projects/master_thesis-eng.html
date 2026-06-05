@@ -13,6 +13,45 @@
 
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Page-local additive styles (do not modify style.css). Scoped to
+         .takeaways so they only affect this list and cannot touch other pages. -->
+    <style>
+      .project-description ul.takeaways {
+          list-style: none;
+          margin: 18px 0 26px;
+          padding: 0;
+      }
+      .project-description ul.takeaways li {
+          display: block;                 /* overrides the shared inline-flex list rule */
+          position: relative;
+          padding: 0 0 14px 1.6em;
+          margin-bottom: 14px;
+          border-bottom: 1px solid var(--text-faint);
+          text-align: left;
+          line-height: 1.7;
+      }
+      .project-description ul.takeaways li:last-child {
+          margin-bottom: 0;
+          padding-bottom: 0;
+          border-bottom: none;
+      }
+      .project-description ul.takeaways li::before {
+          content: '▸';
+          position: absolute;
+          left: 0;
+          top: 0.1em;
+          color: var(--gold);
+          font-size: 0.7rem;
+          line-height: 1.7;
+      }
+      .project-description ul.takeaways li strong {
+          display: block;                 /* lead-in becomes its own heading line */
+          margin-bottom: 5px;
+          color: var(--text-bright);
+          font-weight: 600;
+      }
+    </style>
 </head>
 <body>
 
@@ -113,26 +152,26 @@
                 for anyone designing onboarding:
             </p>
 
-            <ul style="margin:0.4rem 0 0; padding-left:1.2rem; line-height:1.65;">
-                <li style="margin-bottom:0.85rem;">
+            <ul class="takeaways">
+                <li>
                     <strong>Front-loaded text tutorials are the worst format.</strong> Dumping
                     mechanics on players right before they play overloads working memory at the exact
                     moment they need it free. Just-in-time tooltips and in-context prompts at first
                     encounter teach the same content without the cognitive tax.
                 </li>
-                <li style="margin-bottom:0.85rem;">
+                <li>
                     <strong>Players are poor judges of what helped them.</strong> In playtests they
                     reliably rate the more thorough tutorial as "better" — even when it left them
                     performing worse and feeling less competent. "Was the tutorial helpful?" measures
                     what was <em>covered</em>, not what actually <em>worked</em>.
                 </li>
-                <li style="margin-bottom:0.85rem;">
+                <li>
                     <strong>Measure competence, not satisfaction.</strong> Track signals that don't
                     depend on the player's opinion — time to first checkpoint, retries before
                     progressing, damage taken in the first fight, how much of the area they explored.
                     These predict whether players keep going far better than tutorial ratings do.
                 </li>
-                <li style="margin-bottom:0.2rem;">
+                <li>
                     <strong>Adaptive onboarding should read behaviour, not ask questions.</strong> A
                     pre-game personality quiz gets gamed (players pick whatever yields the shorter
                     tutorial) and few players tolerate it. Inferring play style from the first few
