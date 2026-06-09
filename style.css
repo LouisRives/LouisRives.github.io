@@ -14,7 +14,7 @@
     --teal:        #4ab8b0;   
 
     --text:        #ddd8cc;
-    --text-dim:    #7a7468;
+    --text-dim:    #a09488;
     --text-faint:  #2e2c28;
     --text-bright: #f0ead8;
 
@@ -36,6 +36,7 @@ body {
     background-color: var(--bg);
     color: var(--text);
     font-size: 19px;
+    font-weight: 500;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -309,7 +310,7 @@ header nav ul li a:hover::before {
     border-radius: 0 2px 2px 0;
     margin-bottom: 40px;
     font-size: 1.15rem;
-    color: var(--text-dim);
+    color: var(--text);
     line-height: 1.85;
 }
 .aboutme i { color: var(--gold-2); font-style: italic; }
@@ -550,7 +551,7 @@ footer {
 
 .project-description {
     text-align: justify;
-    color: var(--text-dim);
+    color: var(--text);
     line-height: 1.85;
     margin-bottom: 20px;
 }
