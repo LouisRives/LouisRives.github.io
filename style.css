@@ -550,7 +550,7 @@ footer {
 }
 
 .project-description {
-    text-align: justify;
+    text-align: left;
     color: var(--text);
     line-height: 1.85;
     margin-bottom: 20px;
@@ -616,7 +616,7 @@ footer {
 
 .project-description p {
     margin-bottom: 18px;
-    text-align: justify;
+    text-align: left;
 }
 
 .project-description em    { color: var(--gold-2); font-style: italic; }
