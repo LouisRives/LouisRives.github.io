@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Arena Shooter UE5 — Louis RIVES-LEHTINEN</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .project-video-placeholder {
+            width: 100%;
+            max-width: 780px;
+            aspect-ratio: 16 / 9;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin: 0 auto 20px;
+            color: var(--text-dim);
+        }
+        .project-video-placeholder i {
+            font-size: 3rem;
+            color: var(--gold-dim);
+        }
+        .project-video-placeholder p {
+            font-family: var(--ff-pixel);
+            font-size: 0.45rem;
+            letter-spacing: 0.15em;
+            color: var(--text-dim);
+            margin: 0;
+        }
+        .project-images-small {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .project-images-small img,
+        .project-images-small .project-img-placeholder {
+            width: 240px;
+            height: 135px;
+            border-radius: 3px;
+            border: 1px solid var(--border);
+            object-fit: cover;
+        }
+        .project-img-placeholder {
+            background: var(--card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .project-img-placeholder i {
+            color: var(--border);
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index-en.html#about">About</a></li>
+                <li><a href="../index-en.html#skills">Journey</a></li>
+                <li><a href="../index-en.html#projects">Projects</a></li>
+                <li><a href="../index-en.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch">
+            <a href="arena_shooter.html" class="btn-lang">FR</a>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════
+         MINI ABOUT HEADER
+    ═══════════════════════════════════ -->
+    <section id="aboutproject">
+        <div class="container">
+            <div class="about-content">
+                <div class="photo">
+                    <img src="../ressources/photo-louis.jpg"
+                         alt="Photo of Louis RIVES-LEHTINEN"
+                         class="profile-photo-project">
+                </div>
+                <div class="about-text">
+                    <p class="eyebrow">◆ &nbsp;PERSONAL PROJECT &nbsp;·&nbsp; IN PROGRESS&nbsp; ◆</p>
+                    <h1>Louis Rives-Lehtinen</h1>
+                    <p class="about-subtitle">MSc Game Technology — BUAS Breda</p>
+                    <p class="about-subtitle">BSc Computer Science — CERI Avignon</p>
+                    <a href="../ressources/LouisRivesCV.pdf" target="_blank" class="btn">⬇ &nbsp;Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         PROJECT DETAILS
+    ═══════════════════════════════════ -->
+    <section id="project-details">
+
+        <h2>Arena Shooter UE5</h2>
+        <p class="project-subtitle">◆ &nbsp;FAST-PACED &nbsp;·&nbsp; ARENA &nbsp;·&nbsp; UNREAL ENGINE 5&nbsp; ◆</p>
+
+        <div class="divider"><span>✦</span></div>
+
+        <div class="project-description">
+
+            <p>A fast-paced 1v1 arena shooter built in Unreal Engine 5. The concept is straightforward: two players, a small map, instant respawns, and a game that punishes hesitation. Potentially scaling to 2v2 if time and resources allow. The whole thing is directly inspired by the <em>TF2 MGE</em> community mod — that specific kind of competitive format where every match comes down to skill, nothing else.</p>
+
+            <p>The main priority right now is movement and controls. Before anything else gets added, the game needs to <strong>feel</strong> right. That means the physics, the camera, the hit feedback and the audio all have to work together — and a lot of small invisible tricks go into making that happen: hitstops, frame-precise animations, visual and audio cues timed to the action. The kind of detail that's completely unnoticeable when it's working, and immediately wrong when it isn't. Movement mechanics implemented so far:</p>
+
+            <ul>
+                <li>Ground Pound + boosted jump &amp; slide</li>
+                <li>Dash</li>
+                <li>Slide</li>
+                <li>Wall Jump + Wall Run</li>
+                <li>Rocket Launcher &amp; Rocket Jumping</li>
+                <li>Air Strafing</li>
+                <li>Bhop + input buffer</li>
+                <li>Surf</li>
+                <li>Ramp Sliding</li>
+                <li>Smooth Camera</li>
+            </ul>
+
+            <p>The end goal is two playable classes: <strong>Rocket Launcher + Shotgun</strong> and <strong>Sniper + Pistol</strong>. The design philosophy is easy to pick up, very hard to master. Rocket jumps, wall runs, surf ramps and bhop chains should reward players who put the hours in — while keeping the game readable and approachable for newcomers. Fast by design: instant respawn, small maps with few covers, rollout routes that reward mechanical knowledge.</p>
+
+        </div>
+
+        <p class="project-subtitle" style="text-align:left; margin-bottom: 8px;">◆ &nbsp;GAMEPLAY</p>
+        <p style="font-size:0.85rem; color:var(--text-dim); margin-bottom:20px; font-style:italic;">All visuals below are placeholder designs and early prototypes. They are not representative of the final product — the project is at a very early stage.</p>
+
+        <!-- ── Video placeholder ── -->
+        <div class="image-btn-center">
+            <div class="project-video-placeholder">
+                <i class="fas fa-play-circle"></i>
+                <p>GAMEPLAY VIDEO COMING SOON</p>
+            </div>
+
+            <!-- ── Image placeholders ── -->
+            <div class="project-images-small">
+                <div class="project-img-placeholder"><i class="fas fa-image"></i></div>
+                <div class="project-img-placeholder"><i class="fas fa-image"></i></div>
+                <div class="project-img-placeholder"><i class="fas fa-image"></i></div>
+            </div>
+        </div>
+
+        <!-- ── Tags ── -->
+        <div class="project-tags">
+            <span class="project-tag">Unreal Engine 5</span>
+            <span class="project-tag">C++</span>
+            <span class="project-tag">Arena Shooter</span>
+            <span class="project-tag">1v1</span>
+            <span class="project-tag">Game Feel</span>
+            <span class="project-tag">Movement</span>
+            <span class="project-tag">TF2 MGE Inspired</span>
+            <span class="project-tag">In Progress</span>
+        </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════ -->
+    <section id="contact" class="container">
+        <h2 class="section-heading">Contact</h2>
+        <div class="divider"><span>✦</span></div>
+        <p><a href="mailto:louisrives2003@gmail.com" class="social-link"><i class="fas fa-envelope"></i> louisrives2003@gmail.com</a></p>
+        <p><a href="tel:+33695298593" class="social-link"><i class="fas fa-phone"></i> +33 6 95 29 85 93</a></p>
+        <p><a href="https://www.linkedin.com/in/louis-rives-lehtinen-546127274/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a></p>
+        <p><a href="https://github.com/LouisRives" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a></p>
+        <p><a href="https://steamcommunity.com/id/AceLouis/" target="_blank" class="social-link"><i class="fab fa-steam"></i> Steam</a></p>
+    </section>
+
+    <footer>
+        <p>◆ &nbsp;© 2026 Louis RIVES-LEHTINEN &nbsp;·&nbsp; ALL RIGHTS RESERVED &nbsp;◆</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
