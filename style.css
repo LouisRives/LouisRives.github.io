@@ -436,7 +436,7 @@ header nav ul li a:hover::before {
     filter: brightness(0.85) saturate(1);
 }
 
-/* Game "NEW" badge style */
+/* Game badge style */
 .project-badge {
     position: absolute;
     top: 10px;
@@ -604,7 +604,7 @@ footer {
 }
 .close:hover { color: var(--gold); }
 
-/* ── Project detail pages ───────────────────────── */
+/* ── Project detail shared ──────────────────────── */
 .project-subtitle {
     font-family: var(--ff-pixel);
     font-size: 0.65rem;
@@ -708,6 +708,64 @@ footer {
 .project-tag:hover {
     color: var(--gold);
     border-color: var(--gold-dim);
+}
+
+/* ── Arena Shooter / video+image media ──────────── */
+.project-video-placeholder {
+    width: 100%;
+    max-width: 780px;
+    aspect-ratio: 16 / 9;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 0 auto 20px;
+}
+
+.project-video-placeholder i {
+    font-size: 3rem;
+    color: var(--gold-dim);
+}
+
+.project-video-placeholder p {
+    font-family: var(--ff-pixel);
+    font-size: 0.45rem;
+    letter-spacing: 0.15em;
+    color: var(--text-dim);
+    margin: 0;
+}
+
+.project-images-small {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.project-images-small img,
+.project-images-small .project-img-placeholder {
+    width: 240px;
+    height: 135px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    object-fit: cover;
+}
+
+.project-img-placeholder {
+    background: var(--card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-img-placeholder i {
+    color: var(--border);
+    font-size: 1.4rem;
 }
 
 /* ── Game page ───────────────────────────────────── */
@@ -842,10 +900,7 @@ footer {
     .skills { flex-direction: column; }
     .project-list { grid-template-columns: 1fr; }
 
-    /* Stack lang button below nav links so nothing overlaps */
-    header {
-        padding: 6px 0;
-    }
+    header { padding: 6px 0; }
     header nav {
         height: auto;
         flex-direction: column;
@@ -867,6 +922,13 @@ footer {
         display: flex;
         justify-content: center;
         padding-bottom: 6px;
+    }
+
+    .project-images-small img,
+    .project-images-small .project-img-placeholder {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
 }
 
