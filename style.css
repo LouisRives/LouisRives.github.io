@@ -226,17 +226,17 @@ header nav ul li a:hover, header nav ul li a:focus {
 
 .btn-lang {
     font-family: var(--ff-mono);
-    font-size: 0.68rem;
-    color: var(--text-dim);
-    background: transparent;
-    border: 1px solid var(--text-faint);
-    padding: 6px 12px;
+    font-size: 0.7rem;
+    color: var(--bone-2);
+    background: var(--ink);
+    border: 1px solid var(--blood-2);
+    padding: 8px 14px;
     text-decoration: none;
     border-radius: 0;
     letter-spacing: 0.08em;
-    transition: color var(--dur), border-color var(--dur);
+    transition: color var(--dur), background var(--dur), border-color var(--dur);
 }
-.btn-lang:hover { color: var(--bone-2); border-color: var(--blood-2); }
+.btn-lang:hover { color: var(--ink); background: var(--blood-2); }
 
 @media (min-width: 901px) {
     header {
@@ -267,7 +267,14 @@ header nav ul li a:hover, header nav ul li a:focus {
         transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
     }
     header nav ul li a:hover { border-bottom-color: transparent; border-left-color: var(--blood-2); }
-    .language-switch { writing-mode: vertical-rl; transform: rotate(180deg); }
+    .language-switch {
+        position: fixed;
+        top: 20px;
+        right: 24px;
+        z-index: 101;
+        writing-mode: initial;
+        transform: none;
+    }
 }
 
 /* ── Primary button ─────────────────────────────── */
