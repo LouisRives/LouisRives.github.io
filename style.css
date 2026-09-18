@@ -473,14 +473,14 @@ html.is-aiming .cursor-dot { opacity: 0; }
 /* Oversized background numeral — fills the empty margin, not decoration for its own sake */
 .giant-num {
     position: absolute;
-    top: 50%; left: -3vw;
+    top: 50%; left: 2vw;
     transform: translateY(-46%);
     font-family: var(--ff-serif);
     font-style: italic;
-    font-size: clamp(13rem, 32vw, 27rem);
+    font-size: clamp(10rem, 24vw, 20rem);
     line-height: 1;
     color: var(--bone);
-    opacity: 0.035;
+    opacity: 0.045;
     pointer-events: none;
     z-index: 0;
     user-select: none;
