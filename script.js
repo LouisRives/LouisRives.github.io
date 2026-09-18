@@ -285,7 +285,12 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
     new ResizeObserver(resize).observe(section);
     resize();
 
-    /* ── Aim reticle — precise, no lerp, shown across the whole hero ── */
+    /* ── Aim reticle — precise, no lerp, shown across the whole hero ──
+       Uses a live bounding-rect check on every mousemove AND on scroll
+       (re-using the last known pointer position), rather than relying
+       only on mouseenter/mouseleave — those never fire when the user
+       scrolls the hero out from under a stationary cursor, which left
+       the reticle stuck active over sections below. */
     let reticle = null;
     if (FINE_POINTER) {
         reticle = document.createElement('div');
@@ -293,17 +298,24 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
         document.body.appendChild(reticle);
     }
 
-    section.addEventListener('mouseenter', () => {
-        document.documentElement.classList.add('is-aiming');
-        if (reticle) reticle.classList.add('active');
-    });
-    section.addEventListener('mouseleave', () => {
-        document.documentElement.classList.remove('is-aiming');
-        if (reticle) reticle.classList.remove('active');
-    });
-    section.addEventListener('mousemove', e => {
+    let lastClientX = -9999, lastClientY = -9999;
+
+    function syncAimState(clientX, clientY) {
+        const r = section.getBoundingClientRect();
+        const isOver = clientX >= r.left && clientX <= r.right && clientY >= r.top && clientY <= r.bottom;
+        document.documentElement.classList.toggle('is-aiming', isOver);
+        if (reticle) reticle.classList.toggle('active', isOver);
+    }
+
+    window.addEventListener('mousemove', e => {
+        lastClientX = e.clientX; lastClientY = e.clientY;
         if (reticle) reticle.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%,-50%)`;
-    });
+        syncAimState(e.clientX, e.clientY);
+    }, { passive: true });
+
+    window.addEventListener('scroll', () => {
+        syncAimState(lastClientX, lastClientY);
+    }, { passive: true });
 
     function toLocal(clientX, clientY) {
         const r = canvas.getBoundingClientRect();
