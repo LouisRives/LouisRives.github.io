@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -45,8 +45,8 @@
                 <div class="about-text">
                     <p class="eyebrow">◆ &nbsp;PROJET PERSONNEL &nbsp;·&nbsp; EN COURS&nbsp; ◆</p>
                     <h1>Louis Rives-Lehtinen</h1>
-                    <p class="about-subtitle">MSc Game Technology — BUAS Breda</p>
-                    <p class="about-subtitle">Licence Informatique — CERI Avignon</p>
+                    <p class="about-subtitle">MSc Game Technology &middot; BUAS Breda</p>
+                    <p class="about-subtitle">Licence Informatique &middot; CERI Avignon</p>
                     <a href="../ressources/LouisRivesCV.pdf" target="_blank" class="btn">⬇ &nbsp;Télécharger mon CV</a>
                 </div>
             </div>
@@ -65,21 +65,21 @@
 
         <div class="project-description">
 
-            <p>Un fast-paced arena shooter 1v1 développé sur Unreal Engine 5. Le concept est simple : deux joueurs, une petite map, des respawns instantanés, un jeu qui punit l'hésitation. Potentiellement extensible en 2v2 si le temps et les ressources le permettent. Directement inspiré de <em>Quake</em> et du mod communautaire <em>TF2 MGE</em>, ce format compétitif spécifique où chaque match se décide uniquement par le skill.</p>
+            <p>Un arena shooter 1v1 frénétique développé sur Unreal Engine 5. Le concept est simple : deux joueurs, une petite map, des respawns instantanés, un jeu qui punit l'hésitation. Potentiellement extensible en 2v2 si le temps et les ressources le permettent. Directement inspiré de <em>Quake</em> et du mod communautaire <em>TF2 MGE</em>, ce format compétitif spécifique où chaque match se décide uniquement par le skill.</p>
 
             <p>La priorité actuelle, c'est le mouvement et les contrôles. Avant d'ajouter quoi que ce soit d'autre, le jeu doit <strong>se sentir</strong> bien. Ça veut dire que la physique, la caméra, le feedback des coups et l'audio doivent fonctionner ensemble. Beaucoup de petits détails invisibles se cachent derrière ça : les hitstops, les animations frame-perfect, les indices visuels et sonores calés sur l'action. Le genre de chose qu'on ne remarque pas quand ça marche, et qui se voit immédiatement quand ça cloche. Mécaniques de mouvement déjà intégrées :</p>
 
             <ul>
-                <li>Ruée</li>
-                <li>Glissade</li>
-                <li>Saut mural + course murale</li>
-                <li>Charge au sol + saut et glissade améliorées</li>
-                <li>Lance-roquettes + saut propulsé</li>
-                <li>Strafe aérien</li>
-                <li>Bunny hop + Input Buffering</li>
+                <li>Ground Pound + saut et glissade boostés</li>
+                <li>Dash</li>
+                <li>Slide</li>
+                <li>Wall Jump + Wall Run</li>
+                <li>Rocket Launcher &amp; Rocket Jump</li>
+                <li>Air Strafing</li>
+                <li>Bhop + input buffer</li>
                 <li>Surf</li>
-                <li>Glissade sur les rampes (Ramp Sliding)</li>
-                <li>Caméra fluide</li>
+                <li>Ramp Sliding</li>
+                <li>Smooth Camera</li>
             </ul>
 
             <p>L'objectif final c'est deux classes jouables : <strong>Rocket Launcher + Shotgun</strong> et <strong>Sniper + Pistolet</strong>. La philosophie de design : facile à prendre en main, très difficile à maîtriser. Les rocket jumps, wall runs, ramps de surf et chaînes de bhop doivent récompenser les joueurs qui investissent du temps, sans rendre le jeu inaccessible aux débutants. Rapide par conception : respawn instantané, petites maps avec peu de couvertures, rollouts qui récompensent la connaissance mécanique.</p>
@@ -92,14 +92,14 @@
         <!-- ── Vidéo de gameplay ── -->
         <div class="image-btn-center">
             <video controls style="width:100%; max-width:780px; aspect-ratio:16/9; border:1px solid var(--border); border-radius:3px; display:block; margin:0 auto 20px; background:var(--card);">
-                <source src="../ressources/arena_shooter/arena_shooter_gameplay.mp4" type="video/mp4">
+                <source src="../ressources/arena_shooter_gameplay.mp4" type="video/mp4">
             </video>
 
             <!-- ── Captures d'écran ── -->
             <div class="project-images-small">
-                <img src="../ressources/arena_shooter/arena_shooter_1.png" alt="Capture Arena Shooter 1">
-                <img src="../ressources/arena_shooter/arena_shooter_2.png" alt="Capture Arena Shooter 2">
-                <img src="../ressources/arena_shooter/arena_shooter_3.png" alt="Capture Arena Shooter 3">
+                <img src="../ressources/arena_shooter_1.png" alt="Capture Arena Shooter 1" class="clickable-image">
+                <img src="../ressources/arena_shooter_2.png" alt="Capture Arena Shooter 2" class="clickable-image">
+                <img src="../ressources/arena_shooter_3.png" alt="Capture Arena Shooter 3" class="clickable-image">
             </div>
         </div>
 
@@ -116,6 +116,12 @@
         </div>
 
     </section>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="fullImage">
+    </div>
 
     <!-- ═══════════════════════════════════
          CONTACT
@@ -135,5 +141,27 @@
     </footer>
 
     <script src="../script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal    = document.getElementById("imageModal");
+            const modalImg = document.getElementById("fullImage");
+            const closeBtn = document.querySelector(".close");
+
+            document.querySelectorAll(".clickable-image").forEach(img => {
+                img.addEventListener("click", function () {
+                    modal.style.display = "flex";
+                    modalImg.src = this.src;
+                });
+            });
+
+            closeBtn.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            modal.addEventListener("click", function (e) {
+                if (e.target === modal) modal.style.display = "none";
+            });
+        });
+    </script>
 </body>
 </html>

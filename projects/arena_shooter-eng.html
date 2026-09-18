@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -45,8 +45,8 @@
                 <div class="about-text">
                     <p class="eyebrow">◆ &nbsp;PERSONAL PROJECT &nbsp;·&nbsp; IN PROGRESS&nbsp; ◆</p>
                     <h1>Louis Rives-Lehtinen</h1>
-                    <p class="about-subtitle">MSc Game Technology — BUAS Breda</p>
-                    <p class="about-subtitle">BSc Computer Science — CERI Avignon</p>
+                    <p class="about-subtitle">MSc Game Technology &middot; BUAS Breda</p>
+                    <p class="about-subtitle">BSc Computer Science &middot; CERI Avignon</p>
                     <a href="../ressources/LouisRivesCV.pdf" target="_blank" class="btn">⬇ &nbsp;Download CV</a>
                 </div>
             </div>
@@ -70,10 +70,10 @@
             <p>The main priority right now is movement and controls. Before anything else gets added, the game needs to <strong>feel</strong> right. That means the physics, the camera, the hit feedback and the audio all have to work together. A lot of small invisible tricks go into making that happen: hitstops, frame-precise animations, visual and audio cues timed to the action. The kind of detail that's completely unnoticeable when it's working, and immediately wrong when it isn't. Movement mechanics implemented so far:</p>
 
             <ul>
+                <li>Ground Pound + boosted jump &amp; slide</li>
                 <li>Dash</li>
                 <li>Slide</li>
                 <li>Wall Jump + Wall Run</li>
-                <li>Ground Pound + boosted jump &amp; slide</li>
                 <li>Rocket Launcher &amp; Rocket Jumping</li>
                 <li>Air Strafing</li>
                 <li>Bhop + input buffer</li>
@@ -92,14 +92,14 @@
         <!-- ── Gameplay video ── -->
         <div class="image-btn-center">
             <video controls style="width:100%; max-width:780px; aspect-ratio:16/9; border:1px solid var(--border); border-radius:3px; display:block; margin:0 auto 20px; background:var(--card);">
-                <source src="../ressources/arena_shooter/arena_shooter_gameplay.mp4" type="video/mp4">
+                <source src="../ressources/arena_shooter_gameplay.mp4" type="video/mp4">
             </video>
 
             <!-- ── Screenshots ── -->
             <div class="project-images-small">
-                <img src="../ressources/arena_shooter/arena_shooter_1.png" alt="Arena Shooter screenshot 1">
-                <img src="../ressources/arena_shooter/arena_shooter_2.png" alt="Arena Shooter screenshot 2">
-                <img src="../ressources/arena_shooter/arena_shooter_3.png" alt="Arena Shooter screenshot 3">
+                <img src="../ressources/arena_shooter_1.png" alt="Arena Shooter screenshot 1" class="clickable-image">
+                <img src="../ressources/arena_shooter_2.png" alt="Arena Shooter screenshot 2" class="clickable-image">
+                <img src="../ressources/arena_shooter_3.png" alt="Arena Shooter screenshot 3" class="clickable-image">
             </div>
         </div>
 
@@ -116,6 +116,12 @@
         </div>
 
     </section>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="fullImage">
+    </div>
 
     <!-- ═══════════════════════════════════
          CONTACT
@@ -135,5 +141,27 @@
     </footer>
 
     <script src="../script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal    = document.getElementById("imageModal");
+            const modalImg = document.getElementById("fullImage");
+            const closeBtn = document.querySelector(".close");
+
+            document.querySelectorAll(".clickable-image").forEach(img => {
+                img.addEventListener("click", function () {
+                    modal.style.display = "flex";
+                    modalImg.src = this.src;
+                });
+            });
+
+            closeBtn.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            modal.addEventListener("click", function (e) {
+                if (e.target === modal) modal.style.display = "none";
+            });
+        });
+    </script>
 </body>
 </html>
