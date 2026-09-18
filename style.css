@@ -658,14 +658,14 @@ html.is-aiming .cursor-dot { opacity: 0; }
 #contact {
     background: var(--ink-2);
     padding: 90px 24px;
-    text-align: left;
+    text-align: center;
     border-top: 1px solid var(--line);
 }
-#contact .container { max-width: 620px; text-align: left; }
+#contact .container { max-width: 620px; text-align: center; }
 #contact p { margin: 0; }
 
 .social-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 14px;
     color: var(--text-dim);
