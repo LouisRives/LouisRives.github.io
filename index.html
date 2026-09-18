@@ -15,18 +15,6 @@
 </head>
 <body>
 
-    <!-- Filtre duoton pour le portrait : encre -> os, pas un simple niveau de gris -->
-    <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
-        <filter id="duotone">
-            <feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0 0 0 1 0"/>
-            <feComponentTransfer color-interpolation-filters="sRGB">
-                <feFuncR type="table" tableValues="0.04 0.93"/>
-                <feFuncG type="table" tableValues="0.04 0.91"/>
-                <feFuncB type="table" tableValues="0.035 0.86"/>
-            </feComponentTransfer>
-        </filter>
-    </svg>
-
     <!-- Navigation -->
     <header>
         <span class="rail-mark">LRL</span>
@@ -52,6 +40,7 @@
             <img src="ressources/photo-louis.jpg"
                  alt="Photo de Louis RIVES-LEHTINEN"
                  class="profile-photo">
+            <canvas class="photo-game" aria-hidden="true"></canvas>
             <figcaption class="photo-caption">L.R.L. &middot; PORTRAIT</figcaption>
         </figure>
 
