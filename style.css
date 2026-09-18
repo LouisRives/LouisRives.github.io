@@ -307,12 +307,31 @@ header nav ul li a:hover, header nav ul li a:focus {
    HERO / ABOUT
    ══════════════════════════════════════════════════ */
 #about {
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     background: var(--ink);
     padding: 90px 0 60px;
 }
+
+/* Whole-section shooting-gallery canvas sits at the very back;
+   .container is lifted above it so photo + text are ALWAYS visible,
+   and the opaque portrait naturally occludes shapes behind it. */
+.hero-game {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    cursor: none;
+}
+#about > .container {
+    position: relative;
+    z-index: 1;
+    pointer-events: none; /* let clicks/moves fall through to the game */
+}
+#about .btn { pointer-events: auto; } /* except the CV button, which stays clickable */
 
 .about-content {
     display: grid;
@@ -340,7 +359,6 @@ header nav ul li a:hover, header nav ul li a:focus {
     object-fit: cover;
     display: block;
     border: 1px solid var(--line);
-    filter: grayscale(1) contrast(1.1) brightness(0.92);
 }
 
 .photo-caption {
@@ -409,6 +427,33 @@ header nav ul li a:hover, header nav ul li a:focus {
 }
 .cred-list li:last-child { border-bottom: 1px solid var(--text-faint); }
 
+/* Aim reticle — replaces the ambient cursor while hovering the hero */
+.cursor-reticle {
+    position: fixed;
+    top: 0; left: 0;
+    width: 26px; height: 26px;
+    pointer-events: none;
+    z-index: 10003;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.cursor-reticle.active { display: block; }
+.cursor-reticle::before {
+    content: '';
+    position: absolute; inset: 3px;
+    border: 1px solid var(--blood-2);
+    border-radius: 50%;
+}
+.cursor-reticle::after {
+    content: '';
+    position: absolute; top: 50%; left: 50%;
+    width: 2px; height: 2px;
+    background: var(--blood-2);
+    transform: translate(-50%, -50%);
+}
+html.is-aiming .cursor-ring,
+html.is-aiming .cursor-dot { opacity: 0; }
+
 /* legacy alias, unused on new hero but kept for safety */
 .about-subtitle { font-family: var(--ff-mono); font-size: 0.82rem; color: var(--text-dim); }
 
@@ -416,29 +461,50 @@ header nav ul li a:hover, header nav ul li a:focus {
    JOURNEY
    ══════════════════════════════════════════════════ */
 #skills {
+    position: relative;
+    overflow: hidden;
     background: var(--ink-2);
     padding: 100px 0;
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
 }
+#skills .container { position: relative; z-index: 1; }
+
+/* Oversized background numeral — fills the empty margin, not decoration for its own sake */
+.giant-num {
+    position: absolute;
+    top: 50%; left: -3vw;
+    transform: translateY(-46%);
+    font-family: var(--ff-serif);
+    font-style: italic;
+    font-size: clamp(13rem, 32vw, 27rem);
+    line-height: 1;
+    color: var(--bone);
+    opacity: 0.035;
+    pointer-events: none;
+    z-index: 0;
+    user-select: none;
+}
 
 .aboutme {
-    max-width: 64ch;
+    position: relative;
+    z-index: 1;
+    max-width: 70ch;
     margin: 0 0 60px auto;
     font-family: var(--ff-sans);
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     color: var(--text);
-    line-height: 1.85;
+    line-height: 1.8;
 }
-.aboutme p { margin-bottom: 22px; }
+.aboutme p { margin-bottom: 20px; }
 .aboutme p:last-child { margin-bottom: 0; }
 .aboutme .lede {
     font-family: var(--ff-serif);
     font-style: italic;
-    font-size: 1.55rem;
-    line-height: 1.45;
+    font-size: 1.4rem;
+    line-height: 1.42;
     color: var(--bone-2);
-    margin-bottom: 30px;
+    margin-bottom: 26px;
 }
 .aboutme i { color: var(--bone-2); font-style: italic; }
 
@@ -493,7 +559,8 @@ header nav ul li a:hover, header nav ul li a:focus {
 /* ══════════════════════════════════════════════════
    ARCHIVE / PROJECTS
    ══════════════════════════════════════════════════ */
-#projects { padding: 100px 0; background: var(--ink); }
+#projects { position: relative; overflow: hidden; padding: 100px 0; background: var(--ink); }
+#projects .container { position: relative; z-index: 1; }
 
 .project-list {
     display: grid;
@@ -824,6 +891,7 @@ footer {
     .project:first-child { grid-template-columns: 1fr; }
     .project:first-child h3 { font-size: 1.4rem; }
     .aboutme { margin-right: 0; }
+    .giant-num { font-size: clamp(8rem, 40vw, 14rem); opacity: 0.03; }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
