@@ -1,7 +1,6 @@
 'use strict';
 
-/* ── Motion / pointer preference ─────────────────── */
-const NO_MOTION  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const NO_MOTION    = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const FINE_POINTER = window.matchMedia('(pointer: fine)').matches;
 function lerp(a, b, t) { return a + (b - a) * t; }
 
@@ -36,14 +35,16 @@ function lerp(a, b, t) { return a + (b - a) * t; }
     }
     requestAnimationFrame(frame);
 
-    document.addEventListener('mousedown', () => ring.style.width = ring.style.height = '14px');
-    document.addEventListener('mouseup',   () => ring.style.width = ring.style.height = '22px');
+    document.addEventListener('mousedown', () => { ring.style.width = ring.style.height = '14px'; });
+    document.addEventListener('mouseup',   () => { ring.style.width = ring.style.height = '22px'; });
 })();
 
 /* ============================================================
    2.  ABOUT SECTION — cursor-reveal scan
        A hidden monospace line only becomes legible inside a
-       tight reticle-lit radius around the cursor.
+       tight lit radius around the cursor. The cursor mark
+       itself is handled by the global reticle above — this
+       canvas only does the fog + hidden text + click ripples.
    ============================================================ */
 (function initScanReveal() {
     const section = document.getElementById('about');
@@ -63,12 +64,9 @@ function lerp(a, b, t) { return a + (b - a) * t; }
 
         canvas = document.createElement('canvas');
         canvas.setAttribute('aria-hidden', 'true');
-        canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;';
+        canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;';
         section.style.position = 'relative';
-        section.prepend(canvas);
-
-        const cont = section.querySelector('.container');
-        if (cont) { cont.style.position = 'relative'; cont.style.zIndex = '1'; }
+        section.appendChild(canvas);
 
         ctx = canvas.getContext('2d');
 
@@ -106,16 +104,14 @@ function lerp(a, b, t) { return a + (b - a) * t; }
 
         ctx.clearRect(0, 0, W, H);
 
-        /* hidden system line, only revealed by the lit radius */
         ctx.save();
         ctx.globalAlpha = 0.4;
         ctx.fillStyle = '#c7c1b4';
         ctx.font = '11px "IBM Plex Mono", monospace';
         ctx.textAlign = 'center';
-        ctx.fillText('\u2191 \u2191 \u2193 \u2193 \u2190 \u2192 \u2190 \u2192 B A', W / 2, H * 0.9);
+        ctx.fillText('\u2191 \u2191 \u2193 \u2193 \u2190 \u2192 \u2190 \u2192 B A', W / 2, H * 0.92);
         ctx.restore();
 
-        /* fog: fully opaque at edges, clear at cursor */
         const fog = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 190);
         fog.addColorStop(0,    'rgba(10,10,9,0)');
         fog.addColorStop(0.30, 'rgba(10,10,9,0.10)');
@@ -124,14 +120,12 @@ function lerp(a, b, t) { return a + (b - a) * t; }
         ctx.fillStyle = fog;
         ctx.fillRect(0, 0, W, H);
 
-        /* faint cool scan tint at the lit centre */
         const glow = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 85);
         glow.addColorStop(0, 'rgba(164,54,47,0.10)');
         glow.addColorStop(1, 'rgba(164,54,47,0)');
         ctx.fillStyle = glow;
         ctx.fillRect(0, 0, W, H);
 
-        /* click ripples */
         for (let i = ripples.length - 1; i >= 0; i--) {
             const rp = ripples[i];
             rp.r += 7; rp.life -= 0.028;
@@ -142,76 +136,22 @@ function lerp(a, b, t) { return a + (b - a) * t; }
             ctx.arc(rp.x, rp.y, rp.r, 0, Math.PI * 2);
             ctx.stroke();
         }
-
-        /* reticle mark at cursor position inside the section */
-        if (inside) {
-            const r = 8;
-            ctx.strokeStyle = 'rgba(234,229,216,0.85)';
-            ctx.lineWidth = 1;
-            ctx.beginPath(); ctx.arc(pos.x, pos.y, r, 0, Math.PI * 2); ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(pos.x - r - 6, pos.y); ctx.lineTo(pos.x - r, pos.y);
-            ctx.moveTo(pos.x + r, pos.y);     ctx.lineTo(pos.x + r + 6, pos.y);
-            ctx.moveTo(pos.x, pos.y - r - 6); ctx.lineTo(pos.x, pos.y - r);
-            ctx.moveTo(pos.x, pos.y + r);     ctx.lineTo(pos.x, pos.y + r + 6);
-            ctx.stroke();
-            ctx.fillStyle = 'rgba(164,54,47,0.9)';
-            ctx.fillRect(pos.x - 1, pos.y - 1, 2, 2);
-        }
     }
 })();
 
 /* ============================================================
-   3.  BUTTON CLICK FEEDBACK — scale pulse + debris burst
+   3.  BUTTON CLICK FEEDBACK — hitstop
+       A hard, non-eased brightness snap, not a particle burst.
+       Ties directly to the "hitstop" game-feel technique.
    ============================================================ */
 document.addEventListener('click', e => {
     if (NO_MOTION) return;
-    const btn = e.target.closest('.btn, .btn-lang, .social-link');
-    if (!btn) return;
-
-    btn.style.transform  = 'scale(0.96)';
-    btn.style.transition = 'transform 0.08s ease';
-    setTimeout(() => { btn.style.transform = ''; btn.style.transition = ''; }, 120);
-
-    spawnBurst(e.clientX, e.clientY);
+    const el = e.target.closest('.btn, .btn-lang, .social-link, .link-arrow');
+    if (!el) return;
+    el.classList.remove('is-hit');
+    void el.offsetWidth; /* restart animation */
+    el.classList.add('is-hit');
 }, { passive: true });
-
-function spawnBurst(cx, cy) {
-    const OC = document.createElement('canvas');
-    OC.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:9999;';
-    OC.width = window.innerWidth; OC.height = window.innerHeight;
-    document.body.appendChild(OC);
-
-    const ctx = OC.getContext('2d');
-    const palette = ['#eae5d8', '#8f897c', '#a4362f'];
-    const pts = Array.from({ length: 10 }, (_, i) => {
-        const a = (Math.PI * 2 / 10) * i + (Math.random() - 0.5) * 0.7;
-        const s = Math.random() * 4 + 1.5;
-        return {
-            x: cx, y: cy,
-            vx: Math.cos(a) * s, vy: Math.sin(a) * s - 1.2,
-            life: 1, sz: Math.random() * 3 + 1.5,
-            color: palette[Math.floor(Math.random() * palette.length)],
-        };
-    });
-
-    let raf;
-    (function tick() {
-        ctx.clearRect(0, 0, OC.width, OC.height);
-        let alive = false;
-        for (const p of pts) {
-            p.x += p.vx; p.y += p.vy; p.vy += 0.2; p.life -= 0.04;
-            if (p.life <= 0) continue;
-            alive = true;
-            ctx.globalAlpha = p.life;
-            ctx.fillStyle = p.color;
-            ctx.fillRect(Math.round(p.x - p.sz/2), Math.round(p.y - p.sz/2), Math.round(p.sz), Math.round(p.sz));
-        }
-        ctx.globalAlpha = 1;
-        if (alive) raf = requestAnimationFrame(tick);
-        else { cancelAnimationFrame(raf); OC.remove(); }
-    })();
-}
 
 /* ============================================================
    4.  KONAMI CODE  ↑↑↓↓←→←→BA  →  game modal
@@ -240,7 +180,7 @@ $modal.innerHTML = `
       <iframe id="gmIframe" frameborder="0" title="Hyper Pulsar Mini"></iframe>
     </div>
     <div class="gm-footer">
-      WASD / ZQSD · MOVE &nbsp;|&nbsp; MOUSE · AIM &amp; SHOOT &nbsp;|&nbsp; ESC · CLOSE
+      WASD / ZQSD &middot; MOVE &nbsp;|&nbsp; MOUSE &middot; AIM &amp; SHOOT &nbsp;|&nbsp; ESC &middot; CLOSE
     </div>
   </div>`;
 document.body.appendChild($modal);
