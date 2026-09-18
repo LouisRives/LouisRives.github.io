@@ -6,10 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Portfolio - Louis RIVES-LEHTINEN</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Press+Start+2P&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -18,11 +17,12 @@
 
     <!-- Navigation -->
     <header>
+        <span class="rail-mark">LRL</span>
         <nav>
             <ul>
-                <li><a href="#about">À propos</a></li>
+                <li><a href="#about">&Agrave; propos</a></li>
                 <li><a href="#skills">Parcours</a></li>
-                <li><a href="#projects">Projets</a></li>
+                <li><a href="#projects">Archives</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -38,21 +38,31 @@
         <div class="container">
             <div class="about-content">
 
-                <div class="photo">
+                <figure class="photo">
                     <img src="ressources/photo-louis.jpg"
                          alt="Photo de Louis RIVES-LEHTINEN"
                          class="profile-photo">
-                </div>
+                    <figcaption class="photo-caption">L.R.L. &middot; PORTRAIT</figcaption>
+                </figure>
 
                 <div class="about-text">
-                    <p class="eyebrow">◆ &nbsp;GAME DEV &nbsp;·&nbsp; OPEN TO WORK &nbsp;·&nbsp; WORLDWIDE&nbsp; ◆</p>
-                    <h1>Louis<br>Rives-Lehtinen</h1>
-                    <p class="about-subtitle">MSc Game Technology — BUAS Breda</p>
-                    <p class="about-subtitle">Licence Informatique — CERI Avignon</p>
-                    <p class="about-subtitle">Erasmus — VUT Brno University of Technology</p>
-                    <a href="ressources/LouisRivesCV.pdf" target="_blank" class="btn">
-                        ⬇ &nbsp;Télécharger mon CV
-                    </a>
+                    <span class="section-id hero-id">00 / PROFIL</span>
+
+                    <div class="meta-block">
+                        <div class="row"><span class="k">SYST&Egrave;ME</span><span>GAME PROGRAMMER / DESIGNER</span></div>
+                        <div class="row"><span class="k">STATUT</span><span>OUVERT AUX OPPORTUNIT&Eacute;S</span></div>
+                        <div class="row"><span class="k">BASE</span><span>OUVERT PARTOUT</span></div>
+                    </div>
+
+                    <h1>Louis<span class="surname">Rives&#8209;Lehtinen</span></h1>
+
+                    <ul class="cred-list">
+                        <li>Master Game Technology &middot; BUAS Breda</li>
+                        <li>Licence Informatique &middot; CERI Avignon</li>
+                        <li>Erasmus &middot; VUT Brno University of Technology</li>
+                    </ul>
+
+                    <a href="ressources/LouisRivesCV.pdf" target="_blank" class="btn">[ T&Eacute;L&Eacute;CHARGER_CV.PDF ]</a>
                 </div>
 
             </div>
@@ -65,46 +75,47 @@
     <section id="skills">
         <div class="container">
 
-            <h2 class="section-heading">Mon Parcours</h2>
-            <div class="divider"><span>✦</span></div>
+            <div class="section-head">
+                <span class="section-id">01 / PARCOURS</span>
+                <h2 class="section-heading">Parcours</h2>
+            </div>
 
             <div class="aboutme">
-                <p>
-                    Bienvenue sur mon portfolio !<br><br>
-                    Je m'appelle Louis, je suis développeur franco-finlandais, fraîchement diplômé d'un <i>Master en Game Technology</i> à <i>BUAS</i> (Université de Sciences Appliquées de Breda). En ce moment je voyage, je joue et je code. Enfin, pas vraiment dans cet ordre. Les voyages sont une vraie passion : voir les différences de cultures, comment d'autres gens vivent, jouent et créent, ça change la façon dont on pense à tout.<br><br>
-                    Côté code, je travaille sur un arena shooter fast-paced inspiré de <i>Quake</i> et <i>Team Fortress 2</i>, développé en <i>Unreal Engine 5</i>. C'est un moyen de prendre en main ce moteur, mais surtout de créer un jeu sur lequel j'ai envie de jouer. J'ai aussi plus de 150h sur <i>GameMaker</i> avec <i>Hyper Pulsar</i>, un shooter top-down hardcore dans la veine de <i>Hotline Miami</i> et <i>Katana Zero</i>, développé en solo pendant mon année sabbatique. Et je suis un fan de souls-like, ce qui n'est pas étranger au sujet de mon mémoire de Master.<br><br>
-                    Ce qui m'intéresse vraiment c'est le game feel. Ce que les joueurs ressentent sans savoir exactement pourquoi, cette attention au détail invisible qui change tout. Et ça rejoint ma seconde passion : la haute couture et le fashion design. Des créateurs comme <i>Yohji Yamamoto</i>, <i>Issey Miyake</i>, <i>Madame Grès</i> ou <i>Carol Christian Poell</i> sont pour moi de vrais artistes. Concevoir un univers, un système de combat et construire un vêtement, c'est la même obsession.<br><br>
-                    Pour 2027, je cherche un poste de Game Programmer/Designer le jeu vidéo, idéalement en Asie ou dans un pays nordique, mais sincèrement ouvert à n'importe où dans le monde. Si vous faites quelque chose d'ambitieux, contactez-moi.
-                </p>
+                <p class="lede">Je m'appelle Louis, je suis d&eacute;veloppeur franco-finlandais, fra&icirc;chement dipl&ocirc;m&eacute; d'un <i>Master en Game Technology</i> &agrave; <i>BUAS (Breda University of Applied Sciences)</i>.</p>
+                <p>En ce moment je voyage, je joue et je code. Pas vraiment dans cet ordre. Les voyages sont une vraie passion&nbsp;: voir comment d'autres gens vivent, jouent et cr&eacute;ent, &ccedil;a change la fa&ccedil;on dont on pense &agrave; tout.</p>
+                <p>C&ocirc;t&eacute; code, je travaille sur un arena shooter fr&eacute;n&eacute;tique inspir&eacute; de <i>Quake</i> et <i>Team Fortress 2</i>, d&eacute;velopp&eacute; en <i>Unreal Engine 5</i>. C'est mon terrain d'entra&icirc;nement sur le moteur, mais surtout un jeu sur lequel j'ai envie de jouer. J'ai aussi plus de 150h sur <i>GameMaker</i> avec <i>Hyper Pulsar</i>, un shooter top-down hardcore dans la veine de <i>Hotline Miami</i> et <i>Katana Zero</i>. Et je suis un fan de souls-like, ce qui n'est pas &eacute;tranger au sujet de mon m&eacute;moire de Master.</p>
+                <p>Ce qui m'int&eacute;resse vraiment c'est le game feel. Ce que les joueurs ressentent sans savoir exactement pourquoi, ce d&eacute;tail invisible qui change tout. Et &ccedil;a rejoint quelque chose que peu de gens savent sur moi&nbsp;: la haute couture me passionne autant que les jeux. Des cr&eacute;ateurs comme <i>Carol Christian Poell</i>, <i>Yohji Yamamoto</i>, <i>Issey Miyake</i> ou <i>Madame Gr&egrave;s</i>, pour moi c'est de l'art &agrave; part enti&egrave;re. Concevoir un syst&egrave;me de combat et construire un v&ecirc;tement, c'est la m&ecirc;me obsession.</p>
+                <p>Pour 2027, je cherche un poste de Game Programmer/Designer dans le jeu vid&eacute;o, id&eacute;alement en Asie ou dans un pays nordique, mais sinc&egrave;rement ouvert &agrave; n'importe o&ugrave; dans le monde. Si vous faites quelque chose d'ambitieux, contactez-moi.</p>
             </div>
 
             <div class="skills">
                 <div>
-                    <h3>⌨ &nbsp;Langages</h3>
+                    <h3>Langages</h3>
                     <ul>
                         <li>HTML, CSS, JavaScript</li>
-                        <li>C, C++, C#, Blueprints, Java, Python</li>
+                        <li>C, C++, C#, Java, Python</li>
                         <li>SQL</li>
                         <li>GML (GameMaker Language)</li>
                     </ul>
                 </div>
                 <div>
-                    <h3>⚙ &nbsp;Technologies</h3>
+                    <h3>Technologies</h3>
                     <ul>
-                        <li>GameMaker — 150h+</li>
-                        <li>Unreal Engine 5 ⟨en cours⟩</li>
+                        <li>GameMaker &mdash; 150h+</li>
+                        <li>Unreal Engine 5 &#10216;en cours&#10217;</li>
                         <li>Unity</li>
                         <li>Blender</li>
                         <li>Git</li>
                     </ul>
                 </div>
                 <div>
-                    <h3>♥ &nbsp;Inspirations</h3>
+                    <h3>Inspirations</h3>
                     <ul>
-                        <li>Hotline Miami · Katana Zero · Ultrakill</li>
-                        <li>Dark Souls · Elden Ring · Nioh · E33</li>
-                        <li>Overwatch · LoL · Marvel Rivals</li>
-                        <li>Pokémon · Mario · Zelda</li>
+                        <li>Hotline Miami &middot; Katana Zero &middot; Ultrakill</li>
+                        <li>Dark Souls &middot; Elden Ring &middot; Nioh &middot; E33</li>
+                        <li>Overwatch &middot; LoL &middot; Marvel Rivals</li>
+                        <li>Pok&eacute;mon &middot; Mario &middot; Zelda</li>
+                        <li>Quake &middot; TF2</li>
                     </ul>
                 </div>
             </div>
@@ -113,13 +124,15 @@
     </section>
 
     <!-- ═══════════════════════════════════
-         PROJETS
+         ARCHIVES / PROJETS
     ═══════════════════════════════════ -->
     <section id="projects">
         <div class="container">
 
-            <h2 class="section-heading">Projets</h2>
-            <div class="divider"><span>✦</span></div>
+            <div class="section-head">
+                <span class="section-id">02 / ARCHIVES</span>
+                <h2 class="section-heading">Archives</h2>
+            </div>
 
             <div class="project-list">
 
@@ -130,32 +143,35 @@
                     </div>
                     <div class="project-body">
                         <h3>Arena Shooter UE5</h3>
-                        <p>Arena shooter fast-paced inspiré de Quake et Team Fortress 2, développé en solo avec Unreal Engine 5.</p>
-                        <a href="projects/arena_shooter.html" class="btn">Voir plus →</a>
+                        <p class="project-meta-line">UNREAL ENGINE 5 &middot; SOLO &middot; EN COURS</p>
+                        <p>Arena shooter fast-paced inspir&eacute; de Quake et Team Fortress 2, d&eacute;velopp&eacute; en solo avec Unreal Engine 5.</p>
+                        <a href="projects/arena_shooter.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
                 <div class="project">
                     <div class="project-image-wrap">
-                        <img src="ressources/buas.png" alt="Mémoire de Master" class="project-image">
-                        <span class="project-badge">MÉMOIRE</span>
+                        <img src="ressources/buas.png" alt="M&eacute;moire de Master" class="project-image">
+                        <span class="project-badge">M&Eacute;MOIRE</span>
                     </div>
                     <div class="project-body">
-                        <h3>Mémoire de Master</h3>
-                        <p>Adapter le joueur, pas le jeu : une étude sur la conception de tutoriels adaptatifs à la personnalité dans les jeux Souls-like.</p>
-                        <a href="projects/master_thesis.html" class="btn">Voir plus →</a>
+                        <h3>M&eacute;moire de Master</h3>
+                        <p class="project-meta-line">RECHERCHE &middot; BUAS &middot; M&Eacute;MOIRE</p>
+                        <p>Adapter le joueur, pas le jeu&nbsp;: une &eacute;tude sur la conception de tutoriels adaptatifs &agrave; la personnalit&eacute; dans les jeux Souls-like.</p>
+                        <a href="projects/master_thesis.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
                 <div class="project">
                     <div class="project-image-wrap">
                         <img src="ressources/hyper_pulsar.png" alt="Hyper Pulsar" class="project-image">
-                        <span class="project-badge">ANNÉE SABBA.</span>
+                        <span class="project-badge">ABANDONN&Eacute;</span>
                     </div>
                     <div class="project-body">
                         <h3>HYPER PULSAR</h3>
-                        <p>Shooter top-down hardcore inspiré de Hotline Miami et Katana Zero. Développé avec GameMaker durant l'année sabbatique.</p>
-                        <a href="projects/hyper_pulsar.html" class="btn">Voir plus →</a>
+                        <p class="project-meta-line">GAMEMAKER &middot; SOLO &middot; ABANDONN&Eacute;</p>
+                        <p>Shooter top-down hardcore inspir&eacute; de Hotline Miami et Katana Zero. Abandonn&eacute; apr&egrave;s 300h+, mais le projet qui m'a le plus appris.</p>
+                        <a href="projects/hyper_pulsar.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
@@ -166,8 +182,9 @@
                     </div>
                     <div class="project-body">
                         <h3>Game Jam 24h</h3>
-                        <p>Création d'un jeu d'horreur : "Nuit au CERI" lors d'une Game Jam de 24h organisée par l'Université d'Avignon.</p>
-                        <a href="projects/nuit-au-ceri.html" class="btn">Voir plus →</a>
+                        <p class="project-meta-line">UNITY &middot; &Eacute;QUIPE DE 4 &middot; GAME JAM</p>
+                        <p>Cr&eacute;ation d'un jeu d'horreur&nbsp;: "Nuit au CERI" lors d'une Game Jam de 24h organis&eacute;e par l'Universit&eacute; d'Avignon.</p>
+                        <a href="projects/nuit-au-ceri.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
@@ -177,8 +194,9 @@
                     </div>
                     <div class="project-body">
                         <h3>MapTrip</h3>
-                        <p>Application mobile avec une carte du monde interactive pour annoter chaque pays — dates de séjour, activités et souvenirs.</p>
-                        <a href="projects/maptrip.html" class="btn">Voir plus →</a>
+                        <p class="project-meta-line">ANDROID &middot; &Eacute;QUIPE DE 3 &middot; APP MOBILE</p>
+                        <p>Application mobile avec une carte du monde interactive pour annoter chaque pays&nbsp;: dates de s&eacute;jour, activit&eacute;s et souvenirs.</p>
+                        <a href="projects/maptrip.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
@@ -188,8 +206,9 @@
                     </div>
                     <div class="project-body">
                         <h3>Jeu Wordle</h3>
-                        <p>Clone de Wordle avec interface graphique, mode multijoueur et intégration de bots — projet universitaire en équipe de 4.</p>
-                        <a href="projects/wordle.html" class="btn">Voir plus →</a>
+                        <p class="project-meta-line">JAVA &middot; &Eacute;QUIPE DE 4 &middot; MULTIJOUEUR</p>
+                        <p>Clone de Wordle avec interface graphique, mode multijoueur et int&eacute;gration de bots.</p>
+                        <a href="projects/wordle.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
@@ -199,8 +218,9 @@
                     </div>
                     <div class="project-body">
                         <h3>Jeu Morpion</h3>
+                        <p class="project-meta-line">JAVAFX &middot; &Eacute;QUIPE DE 2 &middot; DESKTOP</p>
                         <p>Morpion avec interface graphique, mode joueur contre joueur et IA. Projet universitaire avec Samy Seghir.</p>
-                        <a href="projects/morpion.html" class="btn">Voir plus →</a>
+                        <a href="projects/morpion.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
@@ -210,8 +230,9 @@
                     </div>
                     <div class="project-body">
                         <h3>Rappel Consommateur</h3>
-                        <p>Application mobile affichant les rappels consommateurs en temps réel via l'API du site rappel.conso.gouv.fr.</p>
-                        <a href="projects/rappel-conso.html" class="btn">Voir plus →</a>
+                        <p class="project-meta-line">ANDROID &middot; APP MOBILE</p>
+                        <p>Application mobile affichant les rappels consommateurs en temps r&eacute;el via l'API du site rappel.conso.gouv.fr.</p>
+                        <a href="projects/rappel-conso.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
@@ -226,7 +247,7 @@
         <div class="container">
 
             <h2 class="section-heading">Contact</h2>
-            <div class="divider"><span>✦</span></div>
+            <div class="divider"><span>&#10022;</span></div>
 
             <p><a href="mailto:louisrives2003@gmail.com" class="social-link">
                 <i class="fas fa-envelope"></i> louisrives2003@gmail.com
@@ -248,8 +269,8 @@
     </section>
 
     <footer>
-        <p>◆ &nbsp;© 2026 Louis RIVES-LEHTINEN &nbsp;·&nbsp; TOUS DROITS RÉSERVÉS &nbsp;◆</p>
-        <p style="margin-top:10px;font-family:var(--ff-pixel);font-size:0.38rem;opacity:0.12;letter-spacing:0.2em;">↑ ↑ ↓ ↓ ← → ← → B A</p>
+        <p>&copy; 2026 LOUIS RIVES-LEHTINEN &middot; TOUS DROITS R&Eacute;SERV&Eacute;S</p>
+        <p style="margin-top:10px;font-family:var(--ff-mono);font-size:0.6rem;opacity:0.12;letter-spacing:0.15em;">&uarr; &uarr; &darr; &darr; &larr; &rarr; &larr; &rarr; B A</p>
     </footer>
 
     <script src="script.js"></script>
