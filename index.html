@@ -15,18 +15,6 @@
 </head>
 <body>
 
-    <!-- Filtre duoton pour le portrait : encre -> os, pas un simple niveau de gris -->
-    <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
-        <filter id="duotone">
-            <feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0 0 0 1 0"/>
-            <feComponentTransfer color-interpolation-filters="sRGB">
-                <feFuncR type="table" tableValues="0.04 0.93"/>
-                <feFuncG type="table" tableValues="0.04 0.91"/>
-                <feFuncB type="table" tableValues="0.035 0.86"/>
-            </feComponentTransfer>
-        </filter>
-    </svg>
-
     <!-- Navigation -->
     <header>
         <span class="rail-mark">LRL</span>
@@ -44,45 +32,47 @@
     </header>
 
     <!-- ═══════════════════════════════════
-         À PROPOS / HERO — plein cadre asymétrique
+         À PROPOS / HERO
     ═══════════════════════════════════ -->
     <section id="about">
+        <div class="container">
+            <div class="about-content">
 
-        <figure class="photo">
-            <img src="ressources/photo-louis.jpg"
-                 alt="Photo de Louis RIVES-LEHTINEN"
-                 class="profile-photo">
-            <figcaption class="photo-caption">L.R.L. &middot; PORTRAIT</figcaption>
-        </figure>
+                <figure class="photo">
+                    <img src="ressources/photo-louis.jpg"
+                         alt="Photo de Louis RIVES-LEHTINEN"
+                         class="profile-photo">
+                    <figcaption class="photo-caption">L.R.L. &middot; PORTRAIT</figcaption>
+                </figure>
 
-        <div class="about-text">
-            <span class="section-id hero-id">00 / PROFIL</span>
+                <div class="about-text">
+                    <span class="section-id hero-id">00 / PROFIL</span>
 
-            <div class="tag-block">
-                <span class="tag-punch" aria-hidden="true"></span>
-                <div class="row"><span class="k">R&ocirc;le</span><span>Game Programmer / Designer</span></div>
-                <div class="row"><span class="k">Statut</span><span>Disponible</span></div>
-                <div class="row"><span class="k">Port&eacute;e</span><span>Monde entier</span></div>
+                    <div class="meta-block">
+                        <div class="row"><span class="k">SYST&Egrave;ME</span><span>GAME PROGRAMMER / DESIGNER</span></div>
+                        <div class="row"><span class="k">STATUT</span><span>OUVERT AUX OPPORTUNIT&Eacute;S</span></div>
+                        <div class="row"><span class="k">BASE</span><span>OUVERT PARTOUT</span></div>
+                    </div>
+
+                    <h1>Louis<span class="surname">Rives&#8209;Lehtinen</span></h1>
+
+                    <ul class="cred-list">
+                        <li>Master Game Technology &middot; BUAS Breda</li>
+                        <li>Licence Informatique &middot; CERI Avignon</li>
+                        <li>Erasmus &middot; VUT Brno University of Technology</li>
+                    </ul>
+
+                    <a href="ressources/LouisRivesCV.pdf" target="_blank" class="btn">[ T&Eacute;L&Eacute;CHARGER_CV.PDF ]</a>
+                </div>
+
             </div>
-
-            <h1>Louis<span class="surname">Rives&#8209;Lehtinen</span></h1>
-
-            <ul class="cred-list">
-                <li>Master Game Technology &middot; BUAS Breda</li>
-                <li>Licence Informatique &middot; CERI Avignon</li>
-                <li>Erasmus &middot; VUT Brno University of Technology</li>
-            </ul>
-
-            <a href="ressources/LouisRivesCV.pdf" target="_blank" class="btn">[ T&Eacute;L&Eacute;CHARGER_CV.PDF ]</a>
         </div>
-
     </section>
 
     <!-- ═══════════════════════════════════
          PARCOURS & COMPÉTENCES
     ═══════════════════════════════════ -->
     <section id="skills">
-        <span class="giant-num" aria-hidden="true">01</span>
         <div class="container">
 
             <div class="section-head">
@@ -137,7 +127,6 @@
          ARCHIVES / PROJETS
     ═══════════════════════════════════ -->
     <section id="projects">
-        <span class="giant-num" aria-hidden="true">02</span>
         <div class="container">
 
             <div class="section-head">
@@ -156,7 +145,7 @@
                         <h3>Arena Shooter UE5</h3>
                         <p class="project-meta-line">UNREAL ENGINE 5 &middot; SOLO &middot; EN COURS</p>
                         <p>Arena shooter fast-paced inspir&eacute; de Quake et Team Fortress 2, d&eacute;velopp&eacute; en solo avec Unreal Engine 5.</p>
-                        <a href="projects/arena_shooter.html" class="link-arrow">Ouvrir le dossier</a>
+                        <a href="projects/arena_shooter.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
@@ -169,7 +158,7 @@
                         <h3>M&eacute;moire de Master</h3>
                         <p class="project-meta-line">RECHERCHE &middot; BUAS &middot; M&Eacute;MOIRE</p>
                         <p>Adapter le joueur, pas le jeu&nbsp;: une &eacute;tude sur la conception de tutoriels adaptatifs &agrave; la personnalit&eacute; dans les jeux Souls-like.</p>
-                        <a href="projects/master_thesis.html" class="link-arrow">Ouvrir le dossier</a>
+                        <a href="projects/master_thesis.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
@@ -182,7 +171,7 @@
                         <h3>HYPER PULSAR</h3>
                         <p class="project-meta-line">GAMEMAKER &middot; SOLO &middot; ABANDONN&Eacute;</p>
                         <p>Shooter top-down hardcore inspir&eacute; de Hotline Miami et Katana Zero. Abandonn&eacute; apr&egrave;s 300h+, mais le projet qui m'a le plus appris.</p>
-                        <a href="projects/hyper_pulsar.html" class="link-arrow">Ouvrir le dossier</a>
+                        <a href="projects/hyper_pulsar.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
@@ -195,7 +184,7 @@
                         <h3>Game Jam 24h</h3>
                         <p class="project-meta-line">UNITY &middot; &Eacute;QUIPE DE 4 &middot; GAME JAM</p>
                         <p>Cr&eacute;ation d'un jeu d'horreur&nbsp;: "Nuit au CERI" lors d'une Game Jam de 24h organis&eacute;e par l'Universit&eacute; d'Avignon.</p>
-                        <a href="projects/nuit-au-ceri.html" class="link-arrow">Ouvrir le dossier</a>
+                        <a href="projects/nuit-au-ceri.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
@@ -207,7 +196,7 @@
                         <h3>MapTrip</h3>
                         <p class="project-meta-line">ANDROID &middot; &Eacute;QUIPE DE 3 &middot; APP MOBILE</p>
                         <p>Application mobile avec une carte du monde interactive pour annoter chaque pays&nbsp;: dates de s&eacute;jour, activit&eacute;s et souvenirs.</p>
-                        <a href="projects/maptrip.html" class="link-arrow">Ouvrir le dossier</a>
+                        <a href="projects/maptrip.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
@@ -219,7 +208,7 @@
                         <h3>Jeu Wordle</h3>
                         <p class="project-meta-line">JAVA &middot; &Eacute;QUIPE DE 4 &middot; MULTIJOUEUR</p>
                         <p>Clone de Wordle avec interface graphique, mode multijoueur et int&eacute;gration de bots.</p>
-                        <a href="projects/wordle.html" class="link-arrow">Ouvrir le dossier</a>
+                        <a href="projects/wordle.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
@@ -231,7 +220,7 @@
                         <h3>Jeu Morpion</h3>
                         <p class="project-meta-line">JAVAFX &middot; &Eacute;QUIPE DE 2 &middot; DESKTOP</p>
                         <p>Morpion avec interface graphique, mode joueur contre joueur et IA. Projet universitaire avec Samy Seghir.</p>
-                        <a href="projects/morpion.html" class="link-arrow">Ouvrir le dossier</a>
+                        <a href="projects/morpion.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 
@@ -243,7 +232,7 @@
                         <h3>Rappel Consommateur</h3>
                         <p class="project-meta-line">ANDROID &middot; APP MOBILE</p>
                         <p>Application mobile affichant les rappels consommateurs en temps r&eacute;el via l'API du site rappel.conso.gouv.fr.</p>
-                        <a href="projects/rappel-conso.html" class="link-arrow">Ouvrir le dossier</a>
+                        <a href="projects/rappel-conso.html" class="btn">[ OUVRIR LE DOSSIER ]</a>
                     </div>
                 </div>
 

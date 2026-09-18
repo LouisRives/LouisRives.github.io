@@ -15,18 +15,6 @@
 </head>
 <body>
 
-    <!-- Duotone filter for the hero portrait: ink -> bone, not flat grayscale -->
-    <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
-        <filter id="duotone">
-            <feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0 0 0 1 0"/>
-            <feComponentTransfer color-interpolation-filters="sRGB">
-                <feFuncR type="table" tableValues="0.04 0.93"/>
-                <feFuncG type="table" tableValues="0.04 0.91"/>
-                <feFuncB type="table" tableValues="0.035 0.86"/>
-            </feComponentTransfer>
-        </filter>
-    </svg>
-
     <!-- Navigation -->
     <header>
         <span class="rail-mark">LRL</span>
@@ -44,45 +32,47 @@
     </header>
 
     <!-- ═══════════════════════════════════
-         ABOUT / HERO — full-bleed split
+         ABOUT / HERO
     ═══════════════════════════════════ -->
     <section id="about">
+        <div class="container">
+            <div class="about-content">
 
-        <figure class="photo">
-            <img src="ressources/photo-louis.jpg"
-                 alt="Photo of Louis RIVES-LEHTINEN"
-                 class="profile-photo">
-            <figcaption class="photo-caption">L.R.L. &middot; PORTRAIT</figcaption>
-        </figure>
+                <figure class="photo">
+                    <img src="ressources/photo-louis.jpg"
+                         alt="Photo of Louis RIVES-LEHTINEN"
+                         class="profile-photo">
+                    <figcaption class="photo-caption">L.R.L. &middot; PORTRAIT</figcaption>
+                </figure>
 
-        <div class="about-text">
-            <span class="section-id hero-id">00 / ABOUT</span>
+                <div class="about-text">
+                    <span class="section-id hero-id">00 / ABOUT</span>
 
-            <div class="tag-block">
-                <span class="tag-punch" aria-hidden="true"></span>
-                <div class="row"><span class="k">Role</span><span>Game Programmer / Designer</span></div>
-                <div class="row"><span class="k">Status</span><span>Open to work</span></div>
-                <div class="row"><span class="k">Reach</span><span>Worldwide</span></div>
+                    <div class="meta-block">
+                        <div class="row"><span class="k">SYSTEM</span><span>GAME PROGRAMMER / DESIGNER</span></div>
+                        <div class="row"><span class="k">STATUS</span><span>OPEN TO WORK</span></div>
+                        <div class="row"><span class="k">BASE</span><span>OPEN WORLDWIDE</span></div>
+                    </div>
+
+                    <h1>Louis<span class="surname">Rives&#8209;Lehtinen</span></h1>
+
+                    <ul class="cred-list">
+                        <li>MSc Game Technology &middot; BUAS Breda</li>
+                        <li>BSc Computer Science &middot; CERI Avignon</li>
+                        <li>Erasmus &middot; VUT Brno University of Technology</li>
+                    </ul>
+
+                    <a href="ressources/LouisRivesCV.pdf" target="_blank" class="btn">[ DOWNLOAD_CV.PDF ]</a>
+                </div>
+
             </div>
-
-            <h1>Louis<span class="surname">Rives&#8209;Lehtinen</span></h1>
-
-            <ul class="cred-list">
-                <li>MSc Game Technology &middot; BUAS Breda</li>
-                <li>BSc Computer Science &middot; CERI Avignon</li>
-                <li>Erasmus &middot; VUT Brno University of Technology</li>
-            </ul>
-
-            <a href="ressources/LouisRivesCV.pdf" target="_blank" class="btn">[ DOWNLOAD_CV.PDF ]</a>
         </div>
-
     </section>
 
     <!-- ═══════════════════════════════════
          JOURNEY & SKILLS
     ═══════════════════════════════════ -->
     <section id="skills">
-        <span class="giant-num" aria-hidden="true">01</span>
         <div class="container">
 
             <div class="section-head">
@@ -137,7 +127,6 @@
          ARCHIVE / PROJECTS
     ═══════════════════════════════════ -->
     <section id="projects">
-        <span class="giant-num" aria-hidden="true">02</span>
         <div class="container">
 
             <div class="section-head">
@@ -156,7 +145,7 @@
                         <h3>Arena Shooter UE5</h3>
                         <p class="project-meta-line">UNREAL ENGINE 5 &middot; SOLO &middot; IN PROGRESS</p>
                         <p>Fast-paced arena shooter inspired by Quake and Team Fortress 2, built solo in Unreal Engine 5.</p>
-                        <a href="projects/arena_shooter-eng.html" class="link-arrow">Open File</a>
+                        <a href="projects/arena_shooter-eng.html" class="btn">[ OPEN FILE ]</a>
                     </div>
                 </div>
 
@@ -169,7 +158,7 @@
                         <h3>Master Thesis</h3>
                         <p class="project-meta-line">RESEARCH &middot; BUAS &middot; THESIS</p>
                         <p>Match the Player, Not the Game: An Exploratory Study of Personality-Adaptive Tutorial Design in Souls-like Games.</p>
-                        <a href="projects/master_thesis-eng.html" class="link-arrow">Open File</a>
+                        <a href="projects/master_thesis-eng.html" class="btn">[ OPEN FILE ]</a>
                     </div>
                 </div>
 
@@ -182,7 +171,7 @@
                         <h3>HYPER PULSAR</h3>
                         <p class="project-meta-line">GAMEMAKER &middot; SOLO &middot; SCRAPPED</p>
                         <p>Hardcore top-down shooter inspired by Hotline Miami and Katana Zero. Scrapped after 300+ hours, but the project that taught me the most.</p>
-                        <a href="projects/hyper_pulsar-eng.html" class="link-arrow">Open File</a>
+                        <a href="projects/hyper_pulsar-eng.html" class="btn">[ OPEN FILE ]</a>
                     </div>
                 </div>
 
@@ -195,7 +184,7 @@
                         <h3>24h Game Jam</h3>
                         <p class="project-meta-line">UNITY &middot; TEAM OF 4 &middot; GAME JAM</p>
                         <p>Created a horror game: "A Night at CERI" during a 24-hour Game Jam organized by the University of Avignon.</p>
-                        <a href="projects/nuit-au-ceri-eng.html" class="link-arrow">Open File</a>
+                        <a href="projects/nuit-au-ceri-eng.html" class="btn">[ OPEN FILE ]</a>
                     </div>
                 </div>
 
@@ -207,7 +196,7 @@
                         <h3>MapTrip</h3>
                         <p class="project-meta-line">ANDROID &middot; TEAM OF 3 &middot; MOBILE APP</p>
                         <p>Mobile app with an interactive world map for annotating countries: travel dates, activities, and memories.</p>
-                        <a href="projects/maptrip-eng.html" class="link-arrow">Open File</a>
+                        <a href="projects/maptrip-eng.html" class="btn">[ OPEN FILE ]</a>
                     </div>
                 </div>
 
@@ -219,7 +208,7 @@
                         <h3>Wordle Game</h3>
                         <p class="project-meta-line">JAVA &middot; TEAM OF 4 &middot; MULTIPLAYER</p>
                         <p>Wordle clone with graphical interface, multiplayer features, and bot player integration.</p>
-                        <a href="projects/wordle-eng.html" class="link-arrow">Open File</a>
+                        <a href="projects/wordle-eng.html" class="btn">[ OPEN FILE ]</a>
                     </div>
                 </div>
 
@@ -231,7 +220,7 @@
                         <h3>Tic-Tac-Toe</h3>
                         <p class="project-meta-line">JAVAFX &middot; TEAM OF 2 &middot; DESKTOP</p>
                         <p>Tic-Tac-Toe with graphical interface, player vs. player mode, and an AI opponent. With Samy Seghir.</p>
-                        <a href="projects/morpion-eng.html" class="link-arrow">Open File</a>
+                        <a href="projects/morpion-eng.html" class="btn">[ OPEN FILE ]</a>
                     </div>
                 </div>
 
@@ -243,7 +232,7 @@
                         <h3>Consumer Recall App</h3>
                         <p class="project-meta-line">ANDROID &middot; MOBILE APP</p>
                         <p>Mobile app displaying live consumer recall data from the French government's rappel.conso.gouv.fr API.</p>
-                        <a href="projects/rappel-conso-eng.html" class="link-arrow">Open File</a>
+                        <a href="projects/rappel-conso-eng.html" class="btn">[ OPEN FILE ]</a>
                     </div>
                 </div>
 
