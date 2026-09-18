@@ -219,10 +219,11 @@ header nav ul li a:hover, header nav ul li a:focus { color: var(--bone-2); borde
     grid-template-columns: minmax(280px, 38vw) 1fr;
 }
 
-#about .photo { position: relative; margin: 0; height: 100%; z-index: 3; }
+#about .photo { position: relative; margin: 0; height: 100%; }
 #about .profile-photo {
     width: 100%; height: 100%; min-height: 100vh;
     object-fit: cover; display: block;
+    filter: url(#duotone) contrast(1.05);
 }
 #about .photo::before, #about .photo::after { content: ''; position: absolute; width: 22px; height: 22px; pointer-events: none; }
 #about .photo::before { top: 20px; left: 20px; border-top: 1px solid var(--blood-2); border-left: 1px solid var(--blood-2); }
@@ -280,42 +281,6 @@ header nav ul li a:hover, header nav ul li a:focus { color: var(--bone-2); borde
     #about .profile-photo { min-height: 0; height: auto; aspect-ratio: 4/3; }
     .about-text { padding: 40px 24px 48px; max-width: none; }
 }
-
-/* ── Target practice — hidden game layered over the portrait ── */
-.photo-game {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    cursor: none;
-}
-
-/* Aim reticle: replaces the ambient cursor while hovering the photo */
-.cursor-reticle {
-    position: fixed;
-    top: 0; left: 0;
-    width: 26px; height: 26px;
-    pointer-events: none;
-    z-index: 10003;
-    transform: translate(-50%, -50%);
-    display: none;
-}
-.cursor-reticle.active { display: block; }
-.cursor-reticle::before {
-    content: '';
-    position: absolute; inset: 3px;
-    border: 1px solid var(--blood-2);
-    border-radius: 50%;
-}
-.cursor-reticle::after {
-    content: '';
-    position: absolute; top: 50%; left: 50%;
-    width: 2px; height: 2px;
-    background: var(--blood-2);
-    transform: translate(-50%, -50%);
-}
-html.is-aiming .cursor-ring,
-html.is-aiming .cursor-dot { opacity: 0; }
 
 /* ══════════════════════════════════════════════════
    JOURNEY
