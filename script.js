@@ -103,9 +103,18 @@ function lerp(a, b, t) { return a + (b - a) * t; }
 
         ctx.clearRect(0, 0, W, H);
 
+        /* Ambient light — follows the cursor across the WHOLE hero, purely
+           additive, never darkens or hides anything. This is the general
+           "light follows cursor" atmosphere. */
+        const ambient = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 260);
+        ambient.addColorStop(0, 'rgba(164,54,47,0.10)');
+        ambient.addColorStop(1, 'rgba(164,54,47,0)');
+        ctx.fillStyle = ambient;
+        ctx.fillRect(0, 0, W, H);
+
         /* Hidden hint lives in a small footer band, horizontally centred.
-           Everything drawn here is clipped to that band only — nothing
-           else in the hero is ever touched by this canvas. */
+           ONLY this small band ever gets darkened — nothing else in the
+           hero is ever obscured by this canvas. */
         const hintX = W * 0.5, hintY = H * 0.9;
         const clipW = 460, clipH = 140;
 
@@ -128,12 +137,6 @@ function lerp(a, b, t) { return a + (b - a) * t; }
         fog.addColorStop(0.65, 'rgba(10,10,9,0.78)');
         fog.addColorStop(1,    'rgba(10,10,9,1)');
         ctx.fillStyle = fog;
-        ctx.fillRect(hintX - clipW / 2, hintY - clipH / 2, clipW, clipH);
-
-        const glow = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 65);
-        glow.addColorStop(0, 'rgba(164,54,47,0.10)');
-        glow.addColorStop(1, 'rgba(164,54,47,0)');
-        ctx.fillStyle = glow;
         ctx.fillRect(hintX - clipW / 2, hintY - clipH / 2, clipW, clipH);
 
         ctx.restore(); /* end clip */
@@ -322,11 +325,25 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
     function spawnShape() {
         if (shapes.length >= 3 || W < 80 || H < 80) return;
         const size = (12 + Math.random() * 7) * SCALE;
-        const fromLeft = Math.random() < 0.5;
-        const y = size * 2 + Math.random() * Math.max(1, H - size * 4);
-        const x = fromLeft ? -size : W + size;
-        const vx = (fromLeft ? 1 : -1) * (0.22 + Math.random() * 0.22);
-        const vy = (Math.random() - 0.5) * 0.14;
+
+        /* Spawn from any of the 4 edges, not just left/right */
+        const edge = Math.floor(Math.random() * 4); // 0 left, 1 right, 2 top, 3 bottom
+        let x, y;
+        if (edge === 0)      { x = -size;      y = Math.random() * H; }
+        else if (edge === 1) { x = W + size;    y = Math.random() * H; }
+        else if (edge === 2) { x = Math.random() * W; y = -size; }
+        else                 { x = Math.random() * W; y = H + size; }
+
+        /* Aim toward a randomized point roughly on the far side, with an
+           angular spread so paths cut across diagonally instead of just
+           straight left-to-right. */
+        const targetX = W * (0.15 + Math.random() * 0.7);
+        const targetY = H * (0.15 + Math.random() * 0.7);
+        const angle = Math.atan2(targetY - y, targetX - x) + (Math.random() - 0.5) * 1.0;
+        const speed = 0.22 + Math.random() * 0.22;
+        const vx = Math.cos(angle) * speed;
+        const vy = Math.sin(angle) * speed;
+
         const kind = KINDS[Math.floor(Math.random() * KINDS.length)];
         const critAngle = Math.random() * Math.PI * 2;
         const critDist = size * 0.42;
@@ -436,7 +453,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
         if (!frozen) {
             if (now >= spawnAt) { spawnShape(); spawnAt = now + 2600 + Math.random() * 3000; }
             for (const s of shapes) { s.x += s.vx; s.y += s.vy; s.angle += s.spin; }
-            shapes = shapes.filter(s => s.x > -100 && s.x < W + 100);
+            shapes = shapes.filter(s => s.x > -100 && s.x < W + 100 && s.y > -100 && s.y < H + 100);
 
             for (const p of particles) {
                 p.x += p.vx; p.y += p.vy; p.vy += 0.05; p.vx *= 0.96; p.vy *= 0.96;
