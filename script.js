@@ -103,15 +103,6 @@ function lerp(a, b, t) { return a + (b - a) * t; }
 
         ctx.clearRect(0, 0, W, H);
 
-        /* Ambient light — follows the cursor across the WHOLE hero, purely
-           additive, never darkens or hides anything. This is the general
-           "light follows cursor" atmosphere. */
-        const ambient = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 130);
-        ambient.addColorStop(0, 'rgba(164,54,47,0.10)');
-        ambient.addColorStop(1, 'rgba(164,54,47,0)');
-        ctx.fillStyle = ambient;
-        ctx.fillRect(0, 0, W, H);
-
         /* Hidden hint lives in a small footer band, horizontally centred.
            ONLY this small band ever gets darkened — nothing else in the
            hero is ever obscured by this canvas. */
@@ -140,6 +131,16 @@ function lerp(a, b, t) { return a + (b - a) * t; }
         ctx.fillRect(hintX - clipW / 2, hintY - clipH / 2, clipW, clipH);
 
         ctx.restore(); /* end clip */
+
+        /* Ambient light — drawn LAST, unclipped, on top of everything.
+           This guarantees it looks exactly the same size and intensity
+           everywhere, including over the hint band: nothing painted
+           earlier (the fog) can suppress or crop it anymore. */
+        const ambient = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 130);
+        ambient.addColorStop(0, 'rgba(164,54,47,0.10)');
+        ambient.addColorStop(1, 'rgba(164,54,47,0)');
+        ctx.fillStyle = ambient;
+        ctx.fillRect(0, 0, W, H);
 
         /* Click ripples are a free-roaming ambient touch, not tied to the hint */
         for (let i = ripples.length - 1; i >= 0; i--) {
