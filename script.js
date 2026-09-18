@@ -106,7 +106,7 @@ function lerp(a, b, t) { return a + (b - a) * t; }
         /* Ambient light — follows the cursor across the WHOLE hero, purely
            additive, never darkens or hides anything. This is the general
            "light follows cursor" atmosphere. */
-        const ambient = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 260);
+        const ambient = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, 130);
         ambient.addColorStop(0, 'rgba(164,54,47,0.10)');
         ambient.addColorStop(1, 'rgba(164,54,47,0)');
         ctx.fillStyle = ambient;
