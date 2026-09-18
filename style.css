@@ -37,7 +37,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-    background: var(--ink);
+    background: var(--ink-2);
     color: var(--text);
     font-family: var(--ff-sans);
     font-size: 17px;
@@ -243,13 +243,13 @@ header nav ul li a:hover, header nav ul li a:focus {
         width: 52px;
         height: 100vh;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
         border-bottom: none;
         border-right: 1px solid var(--line);
         padding: 22px 0;
     }
     .rail-mark { display: block; }
-    header nav { height: auto; }
+    header nav { height: auto; margin: auto 0; } /* auto top/bottom margins truly centre the nav */
     header nav ul {
         flex-direction: column;
         align-items: center;
@@ -703,15 +703,21 @@ footer {
    Shared verbatim across all 16 legacy files
    ══════════════════════════════════════════════════ */
 #aboutproject {
-    background: var(--ink-2);
+    background: var(--ink);
     padding: 60px 20px 50px;
     text-align: center;
 }
 #aboutproject .photo::before, #aboutproject .photo::after { display: none; }
 
+#aboutproject .about-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 36px;
+}
+
 .profile-photo-project {
-    width: 150px;
-    height: 150px;
+    width: 190px;
+    height: 190px;
     border-radius: 0;
     object-fit: cover;
     border: 1px solid var(--line);
